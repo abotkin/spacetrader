@@ -64,12 +64,9 @@ class GalacticChartView: UIView {
             
             // draw crosshairs on tracked system
             if galaxy.trackedSystem != nil {
-                
-                for mapPanet in planetsOnMap {
-                    if mapPlanet.system.name == galaxy.trackedSystem!.name {
-                        drawTrackedCrosshairs(mapPlanet)
-                        //drawTrackedArrow(mapPlanet)
-                    }
+                if mapPlanet.system.name == galaxy.trackedSystem!.name {
+                    drawTrackedCrosshairs(mapPlanet)
+                    //drawTrackedArrow(mapPlanet)
                 }
             }
             
@@ -77,7 +74,6 @@ class GalacticChartView: UIView {
             if mapPlanet.system.name == galaxy.currentSystem!.name {
                 drawRangeCircle(mapPlanet.mapLocation)
             }
-
         }
         
         
@@ -85,7 +81,7 @@ class GalacticChartView: UIView {
     }
     
     func drawRangeCircle(_ mapLocation: CGPoint) {
-        let rangeCirclePath = UIBezierPath(arcCenter: mapLocation, radius: rangeCircleRadius, startAngle: 0, endAngle: CGFloat(2*M_PI), clockwise: true)
+        let rangeCirclePath = UIBezierPath(arcCenter: mapLocation, radius: rangeCircleRadius, startAngle: 0, endAngle: CGFloat(2*Double.pi), clockwise: true)
         rangeCirclePath.lineWidth = 1
         textGray.setStroke()
         rangeCirclePath.stroke()
@@ -164,7 +160,7 @@ class GalacticChartView: UIView {
     
     func drawPlanetCircle(_ location: CGPoint, visited: Bool) {
         let planetRadius = CGFloat(2)
-        let planetCircle = UIBezierPath(arcCenter: location, radius: planetRadius, startAngle: 0, endAngle: CGFloat(2*M_PI), clockwise: true)
+        let planetCircle = UIBezierPath(arcCenter: location, radius: planetRadius, startAngle: 0, endAngle: CGFloat(2*Double.pi), clockwise: true)
         let unvisitedColor: UIColor = mapGreen
         let visitedColor: UIColor = mapBlue
         
@@ -183,7 +179,7 @@ class GalacticChartView: UIView {
         let wormholeDrawLocationX = location.x
         let wormholeDrawLocationY = location.y
         let wormholeDrawLocation = CGPoint(x: wormholeDrawLocationX, y: wormholeDrawLocationY)
-        let wormholeCircle = UIBezierPath(arcCenter: wormholeDrawLocation, radius: planetRadius, startAngle: 0, endAngle: CGFloat(2*M_PI), clockwise: true)
+        let wormholeCircle = UIBezierPath(arcCenter: wormholeDrawLocation, radius: planetRadius, startAngle: 0, endAngle: CGFloat(2*Double.pi), clockwise: true)
         UIColor.red.setStroke()
         UIColor.white.setFill()
         wormholeCircle.stroke()

@@ -130,7 +130,7 @@ class PlunderVC: UIViewController, PlunderVCDelegate {
         return min(quantityOnBoard, baysAvailable)
     }
     
-    func plunder(_ commodity: TradeItemType, amount: Int) -> Bool {
+    @discardableResult func plunder(_ commodity: TradeItemType, amount: Int) -> Bool {
         // make sure space to go through
         if amount > getMaxQuantity(commodity) {
             return false

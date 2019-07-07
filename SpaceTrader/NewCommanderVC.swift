@@ -50,7 +50,7 @@ class NewCommanderVC: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func textFieldShouldReturn(_ textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
     {
         textField.resignFirstResponder()
         return true;

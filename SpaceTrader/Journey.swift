@@ -643,7 +643,7 @@ class Journey: NSObject, NSCoding {
         player.specialEvents.incrementCountdown()
         
         // fire segue back to sell (or something else later)
-        var passedText = NSString(string: "done")
+        let passedText = NSString(string: "done")
         NotificationCenter.default.post(name: Notification.Name(rawValue: "encounterModalFireNotification"), object: passedText)
         
         // increment no-claim

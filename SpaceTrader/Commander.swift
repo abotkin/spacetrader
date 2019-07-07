@@ -384,7 +384,7 @@ class Commander: NSObject, NSCoding {
         player.escapePod = false
     }
     
-    func buyFuel(_ units: Int) -> Bool {
+    @discardableResult func buyFuel(_ units: Int) -> Bool {
         let cost = units * player.commanderShip.costOfFuel
         if player.credits >= cost {
             player.commanderShip.fuel += units
@@ -395,7 +395,7 @@ class Commander: NSObject, NSCoding {
         return false
     }
     
-    func buyMaxFuel() -> Bool {
+    @discardableResult func buyMaxFuel() -> Bool {
         let fuelNeeded = player.commanderShip.fuelTanks - player.commanderShip.fuel
         let cost = fuelNeeded * player.commanderShip.costOfFuel
         
@@ -408,7 +408,7 @@ class Commander: NSObject, NSCoding {
         return false
     }
     
-    func buyRepairs(_ price: Int) -> Bool {
+    @discardableResult func buyRepairs(_ price: Int) -> Bool {
         if player.credits >= price {
             let unitsOfRepairs: Int = price / player.commanderShip.repairCosts
             
@@ -419,7 +419,7 @@ class Commander: NSObject, NSCoding {
         return false
     }
     
-    func buyMaxRepairs() -> Bool {
+    @discardableResult func buyMaxRepairs() -> Bool {
         let repairsNeeded = player.commanderShip.hull - player.commanderShip.hullStrength
         let cost = repairsNeeded * player.commanderShip.repairCosts
         
@@ -583,7 +583,7 @@ class Commander: NSObject, NSCoding {
     
     // NEW BUY/SELL FUNCTIONS. ALL BUYING AND SELLING SHOULD USE THESE*********************************
     
-    func buy(_ commodity: TradeItemType, quantity: Int) -> Bool {
+    @discardableResult func buy(_ commodity: TradeItemType, quantity: Int) -> Bool {
         let unitPrice = galaxy.currentSystem!.getBuyPrice(commodity)
         let buyPrice = quantity * unitPrice
         // see if transaction can go through
@@ -606,7 +606,7 @@ class Commander: NSObject, NSCoding {
         return true
     }
     
-    func sell(_ commodity: TradeItemType, quantity: Int) -> Bool {
+    @discardableResult func sell(_ commodity: TradeItemType, quantity: Int) -> Bool {
         // see if enough available
         if (player.commanderShip.getQuantity(commodity) < quantity) {
             return false
