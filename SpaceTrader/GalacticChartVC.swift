@@ -77,13 +77,13 @@ class GalacticChartVC: UIViewController, ShortRangeChartDelegate {
         let title = "Use Portable Singularity"
         let message = "Are you sure you want to use your portable singularity?"
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive ,handler: {
             (alert: UIAlertAction!) -> Void in
             // do nothing
             self.warpByPortableSingularity()
         }))
-        alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default ,handler: {
+        alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // nothing, dismiss alert
         }))

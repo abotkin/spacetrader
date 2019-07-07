@@ -37,7 +37,7 @@ class SellPickerVC: UIViewController {
         }
         
         // set page title & button name
-        let controlState = UIControlState()
+        let controlState = UIControl.State()
         if sellAsOpposedToDump {
             self.title = "Sell \(commodity.rawValue)"
             sellButton.setTitle("Sell", for: controlState)
@@ -92,15 +92,15 @@ class SellPickerVC: UIViewController {
             let title = "Dump \(commodity.rawValue)?"
             let message = "Are you sure you want to dump \(Int(slider.value)) bays of \(commodity.rawValue)?"
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Dump", style: UIAlertActionStyle.destructive ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Dump", style: UIAlertAction.Style.destructive ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // dump and close
                 player.commanderShip.removeCargo(self.commodity, quantity: Int(self.slider.value))
                 //self.navigationController?.popToRootViewControllerAnimated(true)
                 self.dismiss(animated: true, completion: nil)
             }))
-            alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default ,handler: {
+            alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // do nothing
             }))

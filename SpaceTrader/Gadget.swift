@@ -80,7 +80,7 @@ class Gadget: NSObject, NSCoding {
             self.name = decoder.decodeObject(forKey: "name") as! String
             self.price = decoder.decodeInteger(forKey: "price")
             self.sellPrice = decoder.decodeInteger(forKey: "sellPrice")
-            self.techLevel = TechLevelType(rawValue: decoder.decodeObject(forKey: "techLevel") as! String!)!
+            self.techLevel = TechLevelType(rawValue: (decoder.decodeObject(forKey: "techLevel") as! String?)!)!
             self.chance = decoder.decodeInteger(forKey: "chance")
             self.image = decoder.decodeObject(forKey: "image") as! UIImage
     

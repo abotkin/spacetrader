@@ -67,8 +67,8 @@ class WarpVC: UIViewController, ShortRangeChartDelegate {
         let title = "Fuel Needed"
         let message = "You do not have enough fuel to reach any other system."
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // do nothing
         }))
@@ -83,8 +83,8 @@ class WarpVC: UIViewController, ShortRangeChartDelegate {
                 let title = "Large Debt"
                 let message = "Your debt is too large. You are not allowed to leave this system until your debt is lowered."
                 
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                     (alert: UIAlertAction!) -> Void in
                     // do nothing
                 }))
@@ -134,10 +134,10 @@ class WarpVC: UIViewController, ShortRangeChartDelegate {
         
         // turn "warp" button into "track" button if system is out of range
         if galaxy.targetSystemInRange {
-            let controlState = UIControlState()
+            let controlState = UIControl.State()
             warpButtonLabel.setTitle("Warp", for: controlState)
         } else {
-            let controlState = UIControlState()
+            let controlState = UIControl.State()
             warpButtonLabel.setTitle("Track", for: controlState)
         }
         
@@ -176,8 +176,8 @@ class WarpVC: UIViewController, ShortRangeChartDelegate {
         }
         
         // bring untrack and warp button labels in front of scrollView
-        self.view.bringSubview(toFront: warpButtonLabel)
-        self.view.bringSubview(toFront: untrackButtonLabel)
+        self.view.bringSubviewToFront(warpButtonLabel)
+        self.view.bringSubviewToFront(untrackButtonLabel)
     }
     
     override func viewWillAppear(_ animated: Bool) {

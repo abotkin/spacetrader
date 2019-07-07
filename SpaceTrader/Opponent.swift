@@ -659,7 +659,7 @@ class Opponent: NSObject, NSCoding {
         required init(coder decoder: NSCoder) {
             self.ship = decoder.decodeObject(forKey: "ship") as! SpaceShip
             self.commander = decoder.decodeObject(forKey: "commander") as! Commander
-            self.type = IFFStatusType(rawValue: decoder.decodeObject(forKey: "type") as! String!)!
+            self.type = IFFStatusType(rawValue: (decoder.decodeObject(forKey: "type") as! String?)!)!
     
             super.init()
         }

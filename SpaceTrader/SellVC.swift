@@ -10,7 +10,7 @@ import UIKit
 
 class SellVC: UIViewController, BuyModalVCDelegate {
     
-    let controlState = UIControlState()
+    let controlState = UIControl.State()
     
 
     

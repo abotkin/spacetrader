@@ -74,7 +74,7 @@ class PlunderVC: UIViewController, PlunderVCDelegate {
     }
     
     func updateUI() {
-        let controlState = UIControlState()
+        let controlState = UIControl.State()
         // set title to "Plunder Cargo", jettison button text to present
         titleLabel.text = "Plunder Cargo"
         jettisonButton.isEnabled = true
@@ -97,7 +97,7 @@ class PlunderVC: UIViewController, PlunderVCDelegate {
     }
     
     func updateUIJettisonMode() {
-        let controlState = UIControlState()
+        let controlState = UIControl.State()
         // set title to "Jettison Cargo", make jettison button vanish
         titleLabel.text = "Jettison Cargo"
         doneButton.setTitle("Back to Plunder", for: controlState)

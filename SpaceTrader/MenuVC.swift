@@ -118,12 +118,12 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let title = "New Game?"
         let message = "Your current game will be lost."
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // do nothing
         }))
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.destructive ,handler: {
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.destructive ,handler: {
             (alert: UIAlertAction!) -> Void in
             let vc : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "newCommander")
             self.present(vc, animated: true, completion: nil)
@@ -138,9 +138,9 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let title = "Retire?"
         let message = "Are you sure you want to retire?"
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         
-        alertController.addAction(UIAlertAction(title: "Retire", style: UIAlertActionStyle.destructive ,handler: {
+        alertController.addAction(UIAlertAction(title: "Retire", style: UIAlertAction.Style.destructive ,handler: {
             (alert: UIAlertAction!) -> Void in
             // end game
             player.endGameType = EndGameStatus.retired
@@ -149,7 +149,7 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             let vc : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "gameOverVC")
             self.present(vc, animated: true, completion: nil)
         }))
-        alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default ,handler: {
+        alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // do nothing
         }))

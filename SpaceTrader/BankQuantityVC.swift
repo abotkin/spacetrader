@@ -64,10 +64,10 @@ class BankQuantityVC: UIViewController {
         
         // set button title
         if getVsPayBack! {
-            let controlState = UIControlState()
+            let controlState = UIControl.State()
             buttonOutlet.setTitle("Get Loan", for: controlState)
         } else {
-            let controlState = UIControlState()
+            let controlState = UIControl.State()
             buttonOutlet.setTitle("Pay Back Loan", for: controlState)
         }
     }

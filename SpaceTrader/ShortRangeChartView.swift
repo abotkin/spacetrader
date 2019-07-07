@@ -125,8 +125,8 @@ class ShortRangeChartView: UIView {
             let text = system.name
             let font = UIFont(name: "AvenirNext-DemiBold", size: 13.0)
             let color = textGray
-            let myAttributes = [NSAttributedStringKey.font: font!,
-                                NSAttributedStringKey.foregroundColor: color]
+            let myAttributes = [NSAttributedString.Key.font: font!,
+                                NSAttributedString.Key.foregroundColor: color]
             
             // create attributed string
             //let attributedText = NSAttributedString(string: system.name)

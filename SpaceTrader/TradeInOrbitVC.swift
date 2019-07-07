@@ -177,8 +177,8 @@ class TradeInOrbitVC: UIViewController {
             let title: String = "Trade Completed"
             let message: String = "Thanks for selling the \(commodityToTrade.rawValue). It's been a pleasure doing business with you."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // end encounter, close VC
                 //galaxy.currentJourney!.currentEncounter!.concludeEncounter()
@@ -199,8 +199,8 @@ class TradeInOrbitVC: UIViewController {
             let title: String = "Trade Completed"
             let message: String = "Thanks for buying the \(commodityToTrade.rawValue). It's been a pleasure doing business with you."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // end encounter, close VC
                 self.dismiss(animated: false, completion: {

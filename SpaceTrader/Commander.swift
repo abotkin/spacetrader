@@ -643,7 +643,7 @@ class Commander: NSObject, NSCoding {
     
     required init(coder decoder: NSCoder) {
         self.commanderName = decoder.decodeObject(forKey: "commanderName") as! String
-        self.difficulty = DifficultyType(rawValue: decoder.decodeObject(forKey: "difficulty") as! String!)!
+        self.difficulty = DifficultyType(rawValue: (decoder.decodeObject(forKey: "difficulty") as! String?)!)!
         self.commanderShip = decoder.decodeObject(forKey: "commanderShip") as! SpaceShip
         self.credits = decoder.decodeInteger(forKey: "credits")
         self.debt = decoder.decodeInteger(forKey: "debt")

@@ -387,13 +387,13 @@ class StarSystem: NSObject, NSCoding {
     // NSCODING METHODS
         required init(coder decoder: NSCoder) {
             self.name = decoder.decodeObject(forKey: "name") as! String
-            self.techLevel = TechLevelType(rawValue: decoder.decodeObject(forKey: "techLevel") as! String!)!
-            self.politics = PoliticsType(rawValue: decoder.decodeObject(forKey: "politics") as! String!)!
-            self.status = StatusType(rawValue: decoder.decodeObject(forKey: "status") as! String!)!
+            self.techLevel = TechLevelType(rawValue: (decoder.decodeObject(forKey: "techLevel") as! String?)!)!
+            self.politics = PoliticsType(rawValue: (decoder.decodeObject(forKey: "politics") as! String?)!)!
+            self.status = StatusType(rawValue: (decoder.decodeObject(forKey: "status") as! String?)!)!
             self.xCoord = decoder.decodeInteger(forKey: "xCoord")
             self.yCoord = decoder.decodeInteger(forKey: "yCoord")
-            self.specialResources = SpecialResourcesType(rawValue: decoder.decodeObject(forKey: "specialResources") as! String!)!
-            self.size = SizeType(rawValue: decoder.decodeObject(forKey: "size") as! String!)!
+            self.specialResources = SpecialResourcesType(rawValue: (decoder.decodeObject(forKey: "specialResources") as! String?)!)!
+            self.size = SizeType(rawValue: (decoder.decodeObject(forKey: "size") as! String?)!)!
             self.countdown = decoder.decodeInteger(forKey: "countdown")
             self.visited = decoder.decodeBool(forKey: "visited")
             self.wormhole = decoder.decodeBool(forKey: "wormhole")
@@ -403,23 +403,23 @@ class StarSystem: NSObject, NSCoding {
             self.indexNumber = decoder.decodeInteger(forKey: "indexNumber")
             self.mercenaries = decoder.decodeObject(forKey: "mercenaries") as! [CrewMember]
             self.newspaper = decoder.decodeObject(forKey: "newspaper") as! Newspaper
-            if let newsItemDropBoxRaw = decoder.decodeObject(forKey: "newsItemDropBox") as! Int! {
+            if let newsItemDropBoxRaw = decoder.decodeObject(forKey: "newsItemDropBox") as! Int? {
                 self.newsItemDropBox = NewsItemID(rawValue: newsItemDropBoxRaw)
             }
             
-            if let specialEventRaw = decoder.decodeObject(forKey: "specialEvent") as! Int! {
+            if let specialEventRaw = decoder.decodeObject(forKey: "specialEvent") as! Int? {
                 self.specialEvent = SpecialEventID(rawValue: specialEventRaw)
             }
-            if let shipyardRaw = decoder.decodeObject(forKey: "shipyard") as! String! {
+            if let shipyardRaw = decoder.decodeObject(forKey: "shipyard") as! String? {
                 self.shipyard = ShipyardID(rawValue: shipyardRaw)!
             }
-            if let shipyardEngineerRaw = decoder.decodeObject(forKey: "shipyardEngineer") as! String! {
+            if let shipyardEngineerRaw = decoder.decodeObject(forKey: "shipyardEngineer") as! String? {
                 self.shipyardEngineer = ShipyardEngineers(rawValue: shipyardEngineerRaw)!
             }
-            if let shipyardSkillRaw = decoder.decodeObject(forKey: "shipyardSkill") as! String! {
+            if let shipyardSkillRaw = decoder.decodeObject(forKey: "shipyardSkill") as! String? {
                 self.shipyardSkill = ShipyardSkills(rawValue: shipyardSkillRaw)!
             }
-            if let shipyardSizeSpecialtyRaw = decoder.decodeObject(forKey: "shipyardSizeSpecialty") as! String! {
+            if let shipyardSizeSpecialtyRaw = decoder.decodeObject(forKey: "shipyardSizeSpecialty") as! String? {
                 self.shipyardSizeSpecialty = SizeType(rawValue: shipyardSizeSpecialtyRaw)!
             }
             

@@ -207,8 +207,8 @@ class SystemInfoVC: UIViewController {
             let title = "Buy Newspaper?"
             let message = "The local newspaper costs \(priceOfNewspaper) credits. Do you wish to buy a copy?"
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Buy Newspaper", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Buy Newspaper", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 if player.credits > priceOfNewspaper {
                     player.credits -= priceOfNewspaper
@@ -217,7 +217,7 @@ class SystemInfoVC: UIViewController {
                 player.alreadyPaidForNewspaper = true
                 self.performSegue(withIdentifier: "newspaperModal", sender: nil)
             }))
-            alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel ,handler: {
+            alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // do nothing
             }))
@@ -247,9 +247,9 @@ class SystemInfoVC: UIViewController {
     func generateAlert(_ alert: Alert) {
         // NOTE: the alerts fired here need to be modified to require no passed strings, getting whatever they need directly
         
-        let alertController = UIAlertController(title: alert.header, message: alert.text, preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: alert.header, message: alert.text, preferredStyle: UIAlertController.Style.alert)
         
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // when OK pressed, call fireNextArrivalAlert. Will end when no more.
             self.fireNextArrivalAlert()

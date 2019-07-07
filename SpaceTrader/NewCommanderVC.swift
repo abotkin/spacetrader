@@ -173,7 +173,7 @@ class NewCommanderVC: UIViewController, UITextFieldDelegate {
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         
         // set starfield background z index appropriately
-        self.view.sendSubview(toBack: backgroundImage)
+        self.view.sendSubviewToBack(backgroundImage)
         
         nameField.delegate = self
         
@@ -269,7 +269,7 @@ class NewCommanderVC: UIViewController, UITextFieldDelegate {
         
         // must check that information is complete--name must be present and valid.
         
-        if nameField.text?.characters.count == 0 {
+        if nameField.text?.count == 0 {
             name = "Sampson"
         } else {
             name = nameField.text!

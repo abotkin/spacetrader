@@ -32,7 +32,7 @@ class EncounterVCOld: UIViewController {
         //firstTextBlock.text = galaxy.currentJourney!.currentEncounter!.encounterText1
         secondTextBlock.text = galaxy.currentJourney!.currentEncounter!.encounterText2
         
-        let controlState = UIControlState()
+        let controlState = UIControl.State()
         button1Text.setTitle("\(galaxy.currentJourney!.currentEncounter!.button1Text)", for: controlState)
         button2Text.setTitle("\(galaxy.currentJourney!.currentEncounter!.button2Text)", for: controlState)
         button3Text.setTitle("\(galaxy.currentJourney!.currentEncounter!.button3Text)", for: controlState)
@@ -109,8 +109,8 @@ class EncounterVCOld: UIViewController {
             message = "Are you sure you want to attack a trader? Your police record will be set to dubious!"
         }
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Attack", style: UIAlertActionStyle.destructive,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Attack", style: UIAlertAction.Style.destructive,handler: {
             (alert: UIAlertAction!) -> Void in
             // go ahead with it
             if type == "police" {
@@ -121,7 +121,7 @@ class EncounterVCOld: UIViewController {
             self.dismiss(animated: false, completion: nil)
             //galaxy.currentJourney!.currentEncounter!.resumeEncounter(1)
         }))
-        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel,handler: nil))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel,handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
     
@@ -129,8 +129,8 @@ class EncounterVCOld: UIViewController {
         let title: String = "You Lose"
         let message: String = "You ship has been destroyed by your opponent."
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             self.performSegue(withIdentifier: "gameOver", sender: nil)
         }))
@@ -155,8 +155,8 @@ class EncounterVCOld: UIViewController {
                 let title: String = "You Have Nothing Illegal"
                 let message: String = "Are you sure you want to do that? You are not carrying illegal goods, so you have nothing to fear!"
                 
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "Yes, I still want to", style: UIAlertActionStyle.default ,handler: {
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "Yes, I still want to", style: UIAlertAction.Style.default ,handler: {
                     (alert: UIAlertAction!) -> Void in
                     // set police record to dubious if better, flee
                     if player.policeRecordInt > 4 {
@@ -164,7 +164,7 @@ class EncounterVCOld: UIViewController {
                     }
                     //galaxy.currentJourney!.currentEncounter!.resumeEncounter(2)
                 }))
-                alertController.addAction(UIAlertAction(title: "OK, I won't", style: UIAlertActionStyle.default ,handler: {
+                alertController.addAction(UIAlertAction(title: "OK, I won't", style: UIAlertAction.Style.default ,handler: {
                     (alert: UIAlertAction!) -> Void in
                     // nothing, just close the modal
                 }))
@@ -202,8 +202,8 @@ class EncounterVCOld: UIViewController {
         let title = galaxy.currentJourney!.currentEncounter!.alertTitle
         let message = galaxy.currentJourney!.currentEncounter!.alertText
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // dismiss encounter dialog
             self.dismiss(animated: false, completion: nil)
@@ -229,8 +229,8 @@ class EncounterVCOld: UIViewController {
             message = "You have destroyed your opponent."
         }
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // dismiss encounter dialog
             //self.dismissViewControllerAnimated(false, completion: nil)
@@ -270,8 +270,8 @@ class EncounterVCOld: UIViewController {
         let title = "Scoop"
         let message = "A canister from the destroyed ship, labeled \(item.name), drifts within range of your scoops."
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Pick It Up", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Pick It Up", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // dismiss and resume, for now
             print("you picked it up")
@@ -283,7 +283,7 @@ class EncounterVCOld: UIViewController {
             self.dismiss(animated: false, completion: nil)
             galaxy.currentJourney!.currentEncounter!.concludeEncounter()
         }))
-        alertController.addAction(UIAlertAction(title: "Let It Go", style: UIAlertActionStyle.default ,handler: {
+        alertController.addAction(UIAlertAction(title: "Let It Go", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // dismiss and resume, for now
             print("you let it go")
@@ -306,8 +306,8 @@ class EncounterVCOld: UIViewController {
             let title = "Nothing Found"
             let message = "The police find nothing illegal in your cargo holds, and apologise for the inconvenience."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // dismiss and conclude encounter
                 self.dismiss(animated: false, completion: nil)
@@ -319,13 +319,13 @@ class EncounterVCOld: UIViewController {
             let title = "You Have Illegal Goods"
             let message = "Are you sure you want to let the police search you? You are carrying illegal goods!"
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Yes, let them", style: UIAlertActionStyle.destructive ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Yes, let them", style: UIAlertAction.Style.destructive ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // arrest
                 self.arrest()
             }))
-            alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default ,handler: {
+            alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // dismiss alert
                 
