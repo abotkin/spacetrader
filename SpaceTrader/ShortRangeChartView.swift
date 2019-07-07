@@ -149,7 +149,7 @@ class ShortRangeChartView: UIView {
                 drawWormholeCircle(wormholeLocation)
                 
                 let wormholeMapEntry = mapPlanet(system: system.wormholeDestination!, mapLocation: wormholeLocation)
-                wormholeMapEntry.throughWormhole == true
+                wormholeMapEntry.throughWormhole = true
                 planetsOnMap.append(wormholeMapEntry)
             }
             

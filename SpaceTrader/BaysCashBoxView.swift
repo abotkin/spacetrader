@@ -22,7 +22,6 @@ class BaysCashBoxView: UIView {
         
         // define constants
         let bottom: CGFloat = self.bounds.height - 10
-        let top: CGFloat = 10
         let leftEdge: CGFloat = 14
         let rightEdge: CGFloat = self.bounds.width - 14
         

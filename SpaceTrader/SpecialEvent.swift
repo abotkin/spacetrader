@@ -987,7 +987,7 @@ class SpecialEvents: NSObject, NSCoding {
             }
             
             if gemulonInvasionCountdown == 0 {
-                gemulonInvasionCountdown == -1              // inactivate countdown
+                gemulonInvasionCountdown = -1               // inactivate countdown
                 addQuestString("", ID: QuestID.gemulon)     // inactivate quest
                 galaxy.setSpecial("Gemulon", id: SpecialEventID.gemulonInvaded)
                 for planet in galaxy.planets {

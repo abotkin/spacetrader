@@ -658,7 +658,12 @@ class Galaxy: NSObject, NSCoding {
     }
     
 
-    
+    // *************************************************************************
+    // Initialize qunatities of trade items of system
+    // *************************************************************************
+    //
+    // Original source code:
+    // -Traveler.c:831 - "static void InitializeTradeitems( const int Index )"
     func initializeTradeItems(_ system: StarSystem) {
         var passFlag = false
         let difficulty = getDifficultyValue(player.difficulty)
@@ -677,7 +682,7 @@ class Galaxy: NSObject, NSCoding {
         for item in tradeItems {
             let politics = Politics(type: system.politics)
             var quantity: Int = 0
-            passFlag == false
+            passFlag = false
             // continue only if not above max trade item for tech level && not ignored here
             if getTechLevelValue(system.techLevel) < getTechLevelValue(item.techProduction) {
                 quantity = 0

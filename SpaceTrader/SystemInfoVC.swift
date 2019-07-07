@@ -95,8 +95,8 @@ class SystemInfoVC: UIViewController {
 //        fuelButton.titleEdgeInsets.left = 35
 //        fuelButton.titleEdgeInsets.right = 35
         
-        let borderAlpha : CGFloat = 0.7
-        let cornerRadius : CGFloat = 5.0
+//        let borderAlpha : CGFloat = 0.7
+//        let cornerRadius : CGFloat = 5.0
         
         //fuelButton.frame = CGRectMake(100, 100, 200, 40)
         //fuelButton.setTitle("Get Started", forState: UIControlState.Normal)
