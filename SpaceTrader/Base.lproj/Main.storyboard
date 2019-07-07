@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LzY-Mh-0aZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LzY-Mh-0aZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-DemiBold</string>
-        </array>
-        <array key="HiraginoKakuGothic.ttc">
-            <string>HiraginoSans-W3</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Buy Cargo-->
         <scene sceneID="ePP-uQ-otT">
@@ -1356,7 +1347,7 @@
                                                 </connections>
                                             </stepper>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="% of Max:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUV-wZ-cH5" customClass="SmallLabelGrayRJ" customModule="SpaceTrader" customModuleProvider="target">
-                                                <rect key="frame" x="484.5" y="268.5" width="74" height="20.5"/>
+                                                <rect key="frame" x="483.5" y="268.5" width="75" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2200,97 +2191,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ypz-AZ-1iq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="9705" y="372"/>
-        </scene>
-        <!--Buy/Sell Equipment-->
-        <scene sceneID="fRD-wF-VFL">
-            <objects>
-                <viewController id="toB-3f-y7D" customClass="EquipmentListDualTableVC" customModule="SpaceTrader" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="evR-Ev-4B2"/>
-                        <viewControllerLayoutGuide type="bottom" id="I7v-Ix-7nL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="W4X-Sg-5Vt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qPQ-E8-xBR">
-                                <rect key="frame" x="193" y="10" width="215" height="29"/>
-                                <segments>
-                                    <segment title="Weapons"/>
-                                    <segment title="Shields"/>
-                                    <segment title="Gadgets"/>
-                                </segments>
-                                <connections>
-                                    <action selector="SCIndexChanged:" destination="toB-3f-y7D" eventType="valueChanged" id="lwd-mW-4qE"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Weapon Slots on Your Ship:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fW-cE-iN9">
-                                <rect key="frame" x="20" y="54" width="224" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Weapons Available:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNg-TG-gfG">
-                                <rect key="frame" x="20" y="258" width="159" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XnR-qC-fVt">
-                                <rect key="frame" x="20" y="83" width="560" height="167"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="toB-3f-y7D" id="9LP-Cw-I9i"/>
-                                    <outlet property="delegate" destination="toB-3f-y7D" id="GRx-ST-nyb"/>
-                                </connections>
-                            </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w4I-N1-6Qe">
-                                <rect key="frame" x="20" y="287" width="560" height="229"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="toB-3f-y7D" id="YKM-Rt-ShE"/>
-                                    <outlet property="delegate" destination="toB-3f-y7D" id="Sm7-JY-Nbu"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="XnR-qC-fVt" secondAttribute="trailing" id="2Qe-OL-oyH"/>
-                            <constraint firstItem="w4I-N1-6Qe" firstAttribute="top" secondItem="NNg-TG-gfG" secondAttribute="bottom" constant="8" id="8iC-n8-nXu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="w4I-N1-6Qe" secondAttribute="trailing" id="9Qa-hQ-884"/>
-                            <constraint firstItem="qPQ-E8-xBR" firstAttribute="top" secondItem="evR-Ev-4B2" secondAttribute="bottom" constant="10" id="9kO-Kn-Gfr"/>
-                            <constraint firstItem="0fW-cE-iN9" firstAttribute="top" secondItem="qPQ-E8-xBR" secondAttribute="bottom" constant="16" id="BRd-7b-yCg"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="0fW-cE-iN9" secondAttribute="leading" id="IMF-n1-zAo"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="XnR-qC-fVt" secondAttribute="leading" id="JPN-rl-2Hc"/>
-                            <constraint firstItem="NNg-TG-gfG" firstAttribute="top" secondItem="XnR-qC-fVt" secondAttribute="bottom" constant="8" id="Qv6-fN-Bwr"/>
-                            <constraint firstItem="qPQ-E8-xBR" firstAttribute="centerX" secondItem="W4X-Sg-5Vt" secondAttribute="centerX" id="ZUD-ZI-lY0"/>
-                            <constraint firstItem="NNg-TG-gfG" firstAttribute="centerY" secondItem="W4X-Sg-5Vt" secondAttribute="centerY" id="g9Y-5D-N4U"/>
-                            <constraint firstItem="NNg-TG-gfG" firstAttribute="leading" secondItem="0fW-cE-iN9" secondAttribute="leading" id="gk4-Zw-Qzn"/>
-                            <constraint firstItem="I7v-Ix-7nL" firstAttribute="top" secondItem="w4I-N1-6Qe" secondAttribute="bottom" constant="20" id="wRf-xg-gIz"/>
-                            <constraint firstItem="XnR-qC-fVt" firstAttribute="top" secondItem="0fW-cE-iN9" secondAttribute="bottom" constant="8" id="x7W-Kz-jan"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="w4I-N1-6Qe" secondAttribute="leading" id="xGZ-Yj-nHu"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Buy/Sell Equipment" id="ooj-PP-OJb">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="X5p-WG-Qmy">
-                            <connections>
-                                <action selector="doneButton:" destination="toB-3f-y7D" id="y39-c2-wvj"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <connections>
-                        <outlet property="availableLabel" destination="NNg-TG-gfG" id="8I3-yr-Jtf"/>
-                        <outlet property="segmentedControl" destination="qPQ-E8-xBR" id="H5q-FN-HrR"/>
-                        <outlet property="slotsLabel" destination="0fW-cE-iN9" id="2XC-3a-G90"/>
-                        <outlet property="tableView1" destination="XnR-qC-fVt" id="JOH-ce-l3w"/>
-                        <outlet property="tableView2" destination="w4I-N1-6Qe" id="zyK-nT-vKF"/>
-                        <segue destination="Ibv-PY-xwS" kind="show" identifier="gadgetDetailOld" id="fc0-hX-FHZ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ync-ve-mtu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8750" y="2243"/>
         </scene>
         <!--Equipment-->
         <scene sceneID="Q75-Qf-Ch2">
@@ -3446,7 +3346,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shields at 74%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNF-SD-sgk" customClass="StandardLabel" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="213.5" y="297" width="94" height="17"/>
+                                <rect key="frame" x="213.5" y="297" width="95" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -3473,7 +3373,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mhO-Pe-AA3">
-                                <rect key="frame" x="68" y="322" width="240" height="70"/>
+                                <rect key="frame" x="67.5" y="322" width="240" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="CQg-0S-gAu"/>
                                 </constraints>
@@ -6177,91 +6077,13 @@
                     <connections>
                         <outlet property="tableView" destination="8KG-1I-akt" id="gzq-CA-dhY"/>
                         <segue destination="ala-zk-ekz" kind="show" identifier="mercenaryDetail" id="gLW-Zt-l96"/>
-                        <segue destination="XUD-9V-MwR" kind="unwind" unwindAction="unwindAfterMercenaryDetail:" id="XJG-rd-e1e"/>
+                        <segue destination="XUD-9V-MwR" kind="unwind" identifier="unusedUnwindSegue" unwindAction="unwindAfterMercenaryDetail:" id="XJG-rd-e1e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dqn-Mv-66C" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="XUD-9V-MwR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2166" y="-1966"/>
-        </scene>
-        <!--Personnel-->
-        <scene sceneID="MDS-LH-Raf">
-            <objects>
-                <viewController id="1s8-qu-jkZ" customClass="MercenariesVC" customModule="SpaceTrader" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="VHf-0g-dRN"/>
-                        <viewControllerLayoutGuide type="bottom" id="w0H-uY-Pkl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Vdh-Ct-Fej">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GXk-YB-lzH">
-                                <rect key="frame" x="20" y="49" width="560" height="204"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="1s8-qu-jkZ" id="f11-rb-lPR"/>
-                                    <outlet property="delegate" destination="1s8-qu-jkZ" id="mNj-TX-3Uz"/>
-                                </connections>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Current Crew:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3G-iX-JDm">
-                                <rect key="frame" x="20" y="20" width="116" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mercenaries for Hire:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXU-9r-gYC">
-                                <rect key="frame" x="20" y="268" width="173" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iUH-Vk-L3Z">
-                                <rect key="frame" x="20" y="297" width="560" height="207"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="1s8-qu-jkZ" id="drq-Zr-zqk"/>
-                                    <outlet property="delegate" destination="1s8-qu-jkZ" id="zWc-u6-ebS"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="GXk-YB-lzH" secondAttribute="trailing" id="18i-CJ-aN9"/>
-                            <constraint firstItem="w0H-uY-Pkl" firstAttribute="top" secondItem="iUH-Vk-L3Z" secondAttribute="bottom" constant="8" id="6KY-z1-oxb"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="iUH-Vk-L3Z" secondAttribute="leading" id="77W-O0-xqp"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="GXk-YB-lzH" secondAttribute="leading" id="9d7-rv-CHS"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="BXU-9r-gYC" secondAttribute="leading" id="GrU-Wn-Bs0"/>
-                            <constraint firstItem="BXU-9r-gYC" firstAttribute="top" secondItem="GXk-YB-lzH" secondAttribute="bottom" constant="15" id="MSX-Pm-gVg"/>
-                            <constraint firstItem="GXk-YB-lzH" firstAttribute="top" secondItem="N3G-iX-JDm" secondAttribute="bottom" constant="8" id="P9D-pE-UFC"/>
-                            <constraint firstItem="BXU-9r-gYC" firstAttribute="centerY" secondItem="Vdh-Ct-Fej" secondAttribute="centerY" id="giU-JD-qPm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="iUH-Vk-L3Z" secondAttribute="trailing" id="mCi-D8-UpK"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="N3G-iX-JDm" secondAttribute="leading" id="ofc-Hi-Pw6"/>
-                            <constraint firstItem="N3G-iX-JDm" firstAttribute="top" secondItem="VHf-0g-dRN" secondAttribute="bottom" constant="20" id="oxz-92-Q8r"/>
-                            <constraint firstItem="iUH-Vk-L3Z" firstAttribute="top" secondItem="BXU-9r-gYC" secondAttribute="bottom" constant="8" id="rcO-Bp-tyN"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Personnel" id="44w-6W-9Hq">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="fdW-Py-ap0"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="7Ix-dJ-O5w">
-                            <connections>
-                                <action selector="done:" destination="1s8-qu-jkZ" id="Bgj-rQ-0I7"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="tableView1" destination="GXk-YB-lzH" id="798-Jd-SU7"/>
-                        <outlet property="tableView2" destination="iUH-Vk-L3Z" id="XAE-b5-qRU"/>
-                        <segue destination="ala-zk-ekz" kind="show" identifier="mercenaryDetailOld" id="uED-0y-qbB"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eD8-rQ-Lrc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1928" y="-2943"/>
         </scene>
         <!--Personnel Info-->
         <scene sceneID="NB3-dQ-TTN">
@@ -6394,13 +6216,13 @@
                         <outlet property="nameLabel" destination="JNl-el-PH3" id="bvg-LY-bgv"/>
                         <outlet property="pilotLabel" destination="wWm-5f-m9K" id="q0H-JZ-F5j"/>
                         <outlet property="traderLabel" destination="TkD-wJ-fTa" id="IXY-7I-zQK"/>
-                        <segue destination="9Vi-uC-L65" kind="unwind" unwindAction="unwindAfterMercenaryDetail:" id="y8v-Uf-djp"/>
+                        <segue destination="9Vi-uC-L65" kind="unwind" identifier="unusedUnwindSegue" unwindAction="unwindAfterMercenaryDetail:" id="y8v-Uf-djp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YpH-zS-ocT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="9Vi-uC-L65" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3501" y="-2088"/>
+            <point key="canvasLocation" x="-1929" y="-2130"/>
         </scene>
         <!--Newspaper-->
         <scene sceneID="AYU-Aq-6fA">
@@ -6772,7 +6594,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="System" id="Osi-Yw-eUB">
-                        <barButtonItem key="leftBarButtonItem" image="menuPurpleSmaller" style="plain" id="baK-Nb-tt5">
+                        <barButtonItem key="leftBarButtonItem" image="menuPurpleSmaller" id="baK-Nb-tt5">
                             <connections>
                                 <segue destination="HMX-pU-d8v" kind="presentation" id="df9-TI-WZB"/>
                             </connections>
@@ -7153,346 +6975,6 @@
             <point key="canvasLocation" x="2647" y="-4168"/>
         </scene>
         <!--Commander Status-->
-        <scene sceneID="T1p-Be-0Dr">
-            <objects>
-                <viewController title="Commander Status" id="aCM-XP-DSP" customClass="CommanderStatusVC" customModule="SpaceTrader" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="im1-X8-EL8"/>
-                        <viewControllerLayoutGuide type="bottom" id="Yzh-9S-tND"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cwO-OV-4ws">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhb-ir-OKY" customClass="PurpleHeader" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="20" y="134" width="44" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMe-Qe-clR" customClass="SmallLabelGrayRJ" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="60" y="10" width="50" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Difficulty:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekc-xw-5WW" customClass="SmallLabelGrayRJ" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="37" y="39" width="73" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DwS-lD-w9A" customClass="SmallLabelGrayRJ" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="67" y="68" width="43" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pilot:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ght-DG-bgb" customClass="SmallLabelGrayRJ" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="71" y="163" width="39" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Fighter:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwE-Q1-cZO" customClass="SmallLabelGrayRJ" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="51" y="192" width="59" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Engineer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgk-b9-9eF" customClass="SmallLabelGrayRJ" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="223" y="192" width="72" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcr-Fj-Yax" customClass="StandardLabel" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="120" y="163" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXi-HW-z6g" customClass="StandardLabel" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="120" y="192" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Trader:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drd-42-ufj" customClass="SmallLabelGrayRJ" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="240" y="163" width="55" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaf-6S-xeP" customClass="StandardLabel" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="305" y="163" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAg-6e-1Z5" customClass="StandardLabel" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="305" y="192" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Finances" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saa-iN-FOK" customClass="PurpleHeader" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="20" y="258" width="74" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cash:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uV4-3T-rxe" customClass="SmallLabelGrayRJ" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="66" y="287" width="44" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Debt:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tA-R7-FXq" customClass="SmallLabelGrayRJ" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="68" y="316" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Net Worth:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9f-sB-uVf" customClass="SmallLabelGrayRJ" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="26" y="345" width="84" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Notoriety:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdP-ak-apf" customClass="PurpleHeader" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="26" y="411" width="83" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Kills:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqc-T0-LtX" customClass="SmallLabelGrayRJ" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="74" y="440" width="36" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Reputation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNk-zD-C62" customClass="SmallLabelGrayRJ" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="22" y="469" width="88" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Police Record:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijf-4w-39u" customClass="SmallLabelGrayRJ" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="498" width="110" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hx7-Fh-wtA" customClass="StandardLabel" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="120" y="10" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSl-rs-WjK" customClass="StandardLabel" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="120" y="39" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRK-ev-Vpo" customClass="StandardLabel" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="120" y="68" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffs-kq-Qhw" customClass="StandardLabel" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="120" y="287" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeg-gn-mjY" customClass="StandardLabel" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="120" y="316" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBI-aM-7ha" customClass="StandardLabel" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="120" y="345" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5d-If-a5U" customClass="StandardLabel" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="120" y="440" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAA-vy-bCb" customClass="StandardLabel" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="120" y="469" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7Y-pD-O95" customClass="StandardLabel" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="120" y="498" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GrJ-dp-HlB" customClass="RuleView" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="89" width="600" height="45"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="YJd-P0-krw"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oyL-sd-moa" customClass="RuleView" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="213" width="600" height="45"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="UsZ-kQ-UyG"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4wp-X3-b9o" customClass="RuleView" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="366" width="600" height="45"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="6d3-cV-F4o"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="saa-iN-FOK" firstAttribute="leading" secondItem="bhb-ir-OKY" secondAttribute="leading" id="1Q2-85-eUj"/>
-                            <constraint firstItem="NwE-Q1-cZO" firstAttribute="top" secondItem="Ght-DG-bgb" secondAttribute="bottom" constant="8" id="3vC-8P-B06"/>
-                            <constraint firstItem="Ekc-xw-5WW" firstAttribute="top" secondItem="MMe-Qe-clR" secondAttribute="bottom" constant="8" id="4Ey-yx-Nal"/>
-                            <constraint firstItem="Ekc-xw-5WW" firstAttribute="leading" secondItem="MMe-Qe-clR" secondAttribute="leading" id="4xF-5h-zOv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oyL-sd-moa" secondAttribute="trailing" constant="-20" id="5Oq-VX-vn2"/>
-                            <constraint firstItem="I9f-sB-uVf" firstAttribute="trailing" secondItem="8tA-R7-FXq" secondAttribute="trailing" id="6f2-cF-hEJ"/>
-                            <constraint firstItem="NwE-Q1-cZO" firstAttribute="trailing" secondItem="Ght-DG-bgb" secondAttribute="trailing" id="9bJ-uM-LEm"/>
-                            <constraint firstItem="bhb-ir-OKY" firstAttribute="top" secondItem="DwS-lD-w9A" secondAttribute="bottom" constant="30" id="9mh-8j-rw4"/>
-                            <constraint firstItem="uV4-3T-rxe" firstAttribute="leading" secondItem="saa-iN-FOK" secondAttribute="leading" id="9oT-hq-EBE"/>
-                            <constraint firstItem="F5d-If-a5U" firstAttribute="leading" secondItem="bBI-aM-7ha" secondAttribute="leading" id="AAp-PH-oNC"/>
-                            <constraint firstItem="AXi-HW-z6g" firstAttribute="top" secondItem="dcr-Fj-Yax" secondAttribute="bottom" constant="8" id="B5g-6t-8Tj"/>
-                            <constraint firstItem="I9f-sB-uVf" firstAttribute="top" secondItem="8tA-R7-FXq" secondAttribute="bottom" constant="8" id="C4x-HV-3HS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Drd-42-ufj" secondAttribute="trailing" constant="85" id="Cnk-tx-aLK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GrJ-dp-HlB" secondAttribute="trailing" constant="-20" id="CrS-Pn-4TD"/>
-                            <constraint firstItem="4wp-X3-b9o" firstAttribute="top" secondItem="I9f-sB-uVf" secondAttribute="bottom" id="DWQ-Bm-TXv"/>
-                            <constraint firstItem="DwS-lD-w9A" firstAttribute="leading" secondItem="Ekc-xw-5WW" secondAttribute="leading" id="Dst-jK-giu"/>
-                            <constraint firstItem="ffs-kq-Qhw" firstAttribute="leading" secondItem="DRK-ev-Vpo" secondAttribute="leading" id="E8D-Fv-IeL"/>
-                            <constraint firstItem="F5d-If-a5U" firstAttribute="baseline" secondItem="hqc-T0-LtX" secondAttribute="baseline" id="Etm-n7-mUT"/>
-                            <constraint firstItem="oyL-sd-moa" firstAttribute="top" secondItem="NwE-Q1-cZO" secondAttribute="bottom" id="FCR-mn-mBC"/>
-                            <constraint firstItem="GrJ-dp-HlB" firstAttribute="top" secondItem="DwS-lD-w9A" secondAttribute="bottom" id="FCp-gh-C4V"/>
-                            <constraint firstItem="Hx7-Fh-wtA" firstAttribute="baseline" secondItem="MMe-Qe-clR" secondAttribute="baseline" id="FY4-vD-ep5"/>
-                            <constraint firstItem="AXi-HW-z6g" firstAttribute="leading" secondItem="dcr-Fj-Yax" secondAttribute="leading" id="FhU-yp-ZnE"/>
-                            <constraint firstItem="hqc-T0-LtX" firstAttribute="trailing" secondItem="I9f-sB-uVf" secondAttribute="trailing" id="GkQ-Kk-Rky"/>
-                            <constraint firstItem="hqc-T0-LtX" firstAttribute="leading" secondItem="zdP-ak-apf" secondAttribute="leading" id="HMF-S0-EMZ"/>
-                            <constraint firstItem="pgk-b9-9eF" firstAttribute="leading" secondItem="Drd-42-ufj" secondAttribute="leading" id="HWq-Wj-gDV"/>
-                            <constraint firstItem="NwE-Q1-cZO" firstAttribute="leading" secondItem="Ght-DG-bgb" secondAttribute="leading" id="Hsi-Xr-uTd"/>
-                            <constraint firstItem="GNk-zD-C62" firstAttribute="leading" secondItem="hqc-T0-LtX" secondAttribute="leading" id="J2y-ds-6FT"/>
-                            <constraint firstItem="saa-iN-FOK" firstAttribute="top" secondItem="oyL-sd-moa" secondAttribute="bottom" id="Joo-1s-oMo"/>
-                            <constraint firstItem="kSl-rs-WjK" firstAttribute="leading" secondItem="Hx7-Fh-wtA" secondAttribute="leading" id="KPl-S1-Yki"/>
-                            <constraint firstItem="dcr-Fj-Yax" firstAttribute="leading" secondItem="DRK-ev-Vpo" secondAttribute="leading" id="L59-fE-DYv"/>
-                            <constraint firstItem="bAg-6e-1Z5" firstAttribute="baseline" secondItem="pgk-b9-9eF" secondAttribute="baseline" id="Lu5-41-nL8"/>
-                            <constraint firstItem="kSl-rs-WjK" firstAttribute="baseline" secondItem="Ekc-xw-5WW" secondAttribute="baseline" id="M7I-Uw-470"/>
-                            <constraint firstItem="Ght-DG-bgb" firstAttribute="top" secondItem="bhb-ir-OKY" secondAttribute="bottom" constant="8" id="NHf-uW-T8F"/>
-                            <constraint firstItem="jaf-6S-xeP" firstAttribute="leading" secondItem="Drd-42-ufj" secondAttribute="trailing" constant="10" id="Njc-g4-k6K"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4wp-X3-b9o" secondAttribute="trailing" constant="-20" id="OAT-Tq-EuZ"/>
-                            <constraint firstItem="hqc-T0-LtX" firstAttribute="top" secondItem="zdP-ak-apf" secondAttribute="bottom" constant="8" id="OJQ-6a-Xej"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="bhb-ir-OKY" secondAttribute="leading" id="Obo-gs-y5d"/>
-                            <constraint firstItem="Drd-42-ufj" firstAttribute="leading" secondItem="Ght-DG-bgb" secondAttribute="trailing" constant="130" id="Of5-mx-MGF"/>
-                            <constraint firstItem="dcr-Fj-Yax" firstAttribute="baseline" secondItem="Ght-DG-bgb" secondAttribute="baseline" id="PmA-9k-ZTu"/>
-                            <constraint firstItem="DwS-lD-w9A" firstAttribute="top" secondItem="Ekc-xw-5WW" secondAttribute="bottom" constant="8" id="QIR-NB-paf"/>
-                            <constraint firstItem="DRK-ev-Vpo" firstAttribute="baseline" secondItem="DwS-lD-w9A" secondAttribute="baseline" id="Sv7-Sk-f3B"/>
-                            <constraint firstItem="8tA-R7-FXq" firstAttribute="leading" secondItem="uV4-3T-rxe" secondAttribute="leading" id="UZD-YU-cpu"/>
-                            <constraint firstItem="uV4-3T-rxe" firstAttribute="trailing" secondItem="NwE-Q1-cZO" secondAttribute="trailing" id="Vfs-7a-HaE"/>
-                            <constraint firstItem="bBI-aM-7ha" firstAttribute="leading" secondItem="aeg-gn-mjY" secondAttribute="leading" id="WDz-I9-bBV"/>
-                            <constraint firstItem="WAA-vy-bCb" firstAttribute="baseline" secondItem="GNk-zD-C62" secondAttribute="baseline" id="Wfq-Ke-8kI"/>
-                            <constraint firstItem="ffs-kq-Qhw" firstAttribute="baseline" secondItem="uV4-3T-rxe" secondAttribute="baseline" id="X3k-qQ-eds"/>
-                            <constraint firstItem="WAA-vy-bCb" firstAttribute="leading" secondItem="F5d-If-a5U" secondAttribute="leading" id="YUm-Rr-kxh"/>
-                            <constraint firstItem="pgk-b9-9eF" firstAttribute="trailing" secondItem="Drd-42-ufj" secondAttribute="trailing" id="aNj-bq-CO3"/>
-                            <constraint firstItem="aeg-gn-mjY" firstAttribute="baseline" secondItem="8tA-R7-FXq" secondAttribute="baseline" id="b9U-ms-0vW"/>
-                            <constraint firstItem="GrJ-dp-HlB" firstAttribute="leading" secondItem="cwO-OV-4ws" secondAttribute="leadingMargin" constant="-20" id="bt1-bw-XKL"/>
-                            <constraint firstItem="DwS-lD-w9A" firstAttribute="trailing" secondItem="Ekc-xw-5WW" secondAttribute="trailing" id="dO4-Bv-63W"/>
-                            <constraint firstItem="GNk-zD-C62" firstAttribute="top" secondItem="hqc-T0-LtX" secondAttribute="bottom" constant="8" id="dm1-Ty-EeP"/>
-                            <constraint firstItem="T7Y-pD-O95" firstAttribute="leading" secondItem="WAA-vy-bCb" secondAttribute="leading" id="eoJ-ra-PJ8"/>
-                            <constraint firstItem="8tA-R7-FXq" firstAttribute="top" secondItem="uV4-3T-rxe" secondAttribute="bottom" constant="8" id="fFh-8b-PVy"/>
-                            <constraint firstItem="pgk-b9-9eF" firstAttribute="baseline" secondItem="NwE-Q1-cZO" secondAttribute="baseline" id="fI2-Ol-saP"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="MMe-Qe-clR" secondAttribute="leading" id="fN8-7d-eB8"/>
-                            <constraint firstItem="zdP-ak-apf" firstAttribute="leading" secondItem="I9f-sB-uVf" secondAttribute="leading" id="fNT-wP-iBk"/>
-                            <constraint firstItem="I9f-sB-uVf" firstAttribute="leading" secondItem="8tA-R7-FXq" secondAttribute="leading" id="fcB-J8-L8r"/>
-                            <constraint firstItem="aeg-gn-mjY" firstAttribute="leading" secondItem="ffs-kq-Qhw" secondAttribute="leading" id="fpe-pj-qnT"/>
-                            <constraint firstItem="Hx7-Fh-wtA" firstAttribute="leading" secondItem="cwO-OV-4ws" secondAttribute="leadingMargin" constant="100" id="gH0-8a-3E0"/>
-                            <constraint firstItem="Hx7-Fh-wtA" firstAttribute="leading" secondItem="MMe-Qe-clR" secondAttribute="trailing" constant="30" id="gLh-Ug-je5"/>
-                            <constraint firstItem="bAg-6e-1Z5" firstAttribute="leading" secondItem="jaf-6S-xeP" secondAttribute="leading" id="gMJ-9M-jzt"/>
-                            <constraint firstItem="ijf-4w-39u" firstAttribute="leading" secondItem="GNk-zD-C62" secondAttribute="leading" id="h2K-hU-idb"/>
-                            <constraint firstItem="Drd-42-ufj" firstAttribute="baseline" secondItem="Ght-DG-bgb" secondAttribute="baseline" id="haS-EM-7zt"/>
-                            <constraint firstItem="Ght-DG-bgb" firstAttribute="trailing" secondItem="DwS-lD-w9A" secondAttribute="trailing" id="i4j-5t-Mwe"/>
-                            <constraint firstItem="jaf-6S-xeP" firstAttribute="baseline" secondItem="Ght-DG-bgb" secondAttribute="baseline" id="iRX-lX-ifm"/>
-                            <constraint firstItem="uV4-3T-rxe" firstAttribute="top" secondItem="saa-iN-FOK" secondAttribute="bottom" constant="8" id="jIf-Hw-bVo"/>
-                            <constraint firstItem="DRK-ev-Vpo" firstAttribute="leading" secondItem="kSl-rs-WjK" secondAttribute="leading" id="jep-BW-doT"/>
-                            <constraint firstItem="Ekc-xw-5WW" firstAttribute="trailing" secondItem="MMe-Qe-clR" secondAttribute="trailing" id="jzl-ju-B9G"/>
-                            <constraint firstItem="pgk-b9-9eF" firstAttribute="leading" secondItem="Drd-42-ufj" secondAttribute="leading" id="lyu-jl-g22"/>
-                            <constraint firstItem="oyL-sd-moa" firstAttribute="leading" secondItem="cwO-OV-4ws" secondAttribute="leadingMargin" constant="-20" id="mkP-Cy-aUD"/>
-                            <constraint firstItem="ijf-4w-39u" firstAttribute="trailing" secondItem="GNk-zD-C62" secondAttribute="trailing" id="nCK-ai-9QE"/>
-                            <constraint firstItem="saa-iN-FOK" firstAttribute="leading" secondItem="NwE-Q1-cZO" secondAttribute="leading" id="pIb-le-ins"/>
-                            <constraint firstItem="zdP-ak-apf" firstAttribute="top" secondItem="4wp-X3-b9o" secondAttribute="bottom" id="paE-cT-ZZR"/>
-                            <constraint firstItem="GNk-zD-C62" firstAttribute="trailing" secondItem="hqc-T0-LtX" secondAttribute="trailing" id="rZj-gg-MwG"/>
-                            <constraint firstItem="bhb-ir-OKY" firstAttribute="top" secondItem="GrJ-dp-HlB" secondAttribute="bottom" id="rkR-vE-bwc"/>
-                            <constraint firstItem="ijf-4w-39u" firstAttribute="top" secondItem="GNk-zD-C62" secondAttribute="bottom" constant="8" id="sAx-I3-zAz"/>
-                            <constraint firstItem="Ght-DG-bgb" firstAttribute="leading" secondItem="bhb-ir-OKY" secondAttribute="leading" id="sD1-aU-afw"/>
-                            <constraint firstItem="4wp-X3-b9o" firstAttribute="leading" secondItem="cwO-OV-4ws" secondAttribute="leadingMargin" constant="-20" id="shE-oS-bgR"/>
-                            <constraint firstItem="AXi-HW-z6g" firstAttribute="baseline" secondItem="NwE-Q1-cZO" secondAttribute="baseline" id="tTr-nY-2w7"/>
-                            <constraint firstItem="MMe-Qe-clR" firstAttribute="top" secondItem="im1-X8-EL8" secondAttribute="bottom" constant="10" id="tfW-ZY-pBA"/>
-                            <constraint firstItem="8tA-R7-FXq" firstAttribute="trailing" secondItem="uV4-3T-rxe" secondAttribute="trailing" id="u6b-Ha-ap8"/>
-                            <constraint firstItem="bBI-aM-7ha" firstAttribute="baseline" secondItem="I9f-sB-uVf" secondAttribute="baseline" id="uc3-tH-uEM"/>
-                            <constraint firstItem="Hx7-Fh-wtA" firstAttribute="leading" secondItem="MMe-Qe-clR" secondAttribute="trailing" constant="10" id="v0i-8Y-2eS"/>
-                            <constraint firstItem="T7Y-pD-O95" firstAttribute="baseline" secondItem="ijf-4w-39u" secondAttribute="baseline" id="y5U-wZ-ht9"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="4xF-5h-zOv"/>
-                                <exclude reference="fN8-7d-eB8"/>
-                                <exclude reference="Dst-jK-giu"/>
-                                <exclude reference="gLh-Ug-je5"/>
-                                <exclude reference="9mh-8j-rw4"/>
-                                <exclude reference="sD1-aU-afw"/>
-                                <exclude reference="Hsi-Xr-uTd"/>
-                                <exclude reference="B5g-6t-8Tj"/>
-                                <exclude reference="pIb-le-ins"/>
-                                <exclude reference="Cnk-tx-aLK"/>
-                                <exclude reference="HWq-Wj-gDV"/>
-                                <exclude reference="lyu-jl-g22"/>
-                                <exclude reference="9oT-hq-EBE"/>
-                                <exclude reference="UZD-YU-cpu"/>
-                                <exclude reference="fcB-J8-L8r"/>
-                                <exclude reference="HMF-S0-EMZ"/>
-                                <exclude reference="J2y-ds-6FT"/>
-                                <exclude reference="h2K-hU-idb"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <connections>
-                        <outlet property="cashLabel" destination="ffs-kq-Qhw" id="nHF-i5-6vb"/>
-                        <outlet property="debtLabel" destination="aeg-gn-mjY" id="ahK-Aj-R3v"/>
-                        <outlet property="difficultyLabel" destination="kSl-rs-WjK" id="Mhl-vN-61i"/>
-                        <outlet property="engineerLabel" destination="bAg-6e-1Z5" id="Be1-mx-6ca"/>
-                        <outlet property="fighterLabel" destination="AXi-HW-z6g" id="0bu-MW-Y0i"/>
-                        <outlet property="killsLabel" destination="F5d-If-a5U" id="PsR-D8-PLc"/>
-                        <outlet property="nameLabel" destination="Hx7-Fh-wtA" id="eUH-QM-kcy"/>
-                        <outlet property="netWorthLabel" destination="bBI-aM-7ha" id="Kbx-Fv-hNm"/>
-                        <outlet property="pilotLabel" destination="dcr-Fj-Yax" id="pnq-6O-y40"/>
-                        <outlet property="policeRecordLabel" destination="T7Y-pD-O95" id="egK-ar-bIi"/>
-                        <outlet property="reputationLabel" destination="WAA-vy-bCb" id="T3P-6k-WgM"/>
-                        <outlet property="timeLabel" destination="DRK-ev-Vpo" id="eKW-ka-drV"/>
-                        <outlet property="traderLabel" destination="jaf-6S-xeP" id="8di-q2-WWK"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G32-DB-DTo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="823" y="-4979"/>
-        </scene>
-        <!--Commander Status-->
         <scene sceneID="3zm-Oa-SIv">
             <objects>
                 <viewController title="Commander Status" id="xmr-t0-zTL" customClass="CommanderStatus2VC" customModule="SpaceTrader" customModuleProvider="target" sceneMemberID="viewController">
@@ -7564,130 +7046,6 @@
             <point key="canvasLocation" x="1113" y="-4133"/>
         </scene>
         <!--Ship-->
-        <scene sceneID="Ob9-IC-QjV">
-            <objects>
-                <viewController title="Ship" id="jA6-fh-QL3" customClass="ShipVC" customModule="SpaceTrader" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dIo-fW-7aE"/>
-                        <viewControllerLayoutGuide type="bottom" id="iAU-kT-BV7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QS0-QP-J2V">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8v-dO-Pa4" customClass="SmallLabelGrayRJ" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="83" y="20" width="47" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;label&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hu7-q7-L7g" customClass="StandardLabel" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="140" y="20" width="58" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Equipment:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tL9-oD-z5d" customClass="PurpleHeader" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="20" y="107" width="94" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Special Cargo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpB-aw-rHg" customClass="PurpleHeader" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="20" y="378" width="119" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fis-at-B3N">
-                                <rect key="frame" x="20" y="136" width="560" height="234"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="jA6-fh-QL3" id="vbH-S5-GKw"/>
-                                    <outlet property="delegate" destination="jA6-fh-QL3" id="GaH-Jg-pXv"/>
-                                </connections>
-                            </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xef-AJ-IaK">
-                                <rect key="frame" x="20" y="407" width="560" height="149"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="jA6-fh-QL3" id="W4A-8z-Uqa"/>
-                                    <outlet property="delegate" destination="jA6-fh-QL3" id="y6J-3E-Rt7"/>
-                                </connections>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Crew Quarters:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeW-49-ZWK" customClass="SmallLabelGrayRJ" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="5" y="51" width="125" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;label&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCS-ul-FPv" customClass="StandardLabel" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="140" y="51" width="58" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qrT-ha-brY" customClass="RuleView" customModule="SpaceTrader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="600" height="35"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="vix-oY-60O"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Xef-AJ-IaK" firstAttribute="top" secondItem="gpB-aw-rHg" secondAttribute="bottom" constant="8" id="0GD-0g-0Jt"/>
-                            <constraint firstItem="WeW-49-ZWK" firstAttribute="trailing" secondItem="a8v-dO-Pa4" secondAttribute="trailing" id="422-Q1-7sy"/>
-                            <constraint firstItem="SCS-ul-FPv" firstAttribute="baseline" secondItem="WeW-49-ZWK" secondAttribute="baseline" id="6em-nO-dhe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Fis-at-B3N" secondAttribute="trailing" id="91Z-jJ-eZf"/>
-                            <constraint firstItem="tL9-oD-z5d" firstAttribute="top" secondItem="WeW-49-ZWK" secondAttribute="bottom" constant="45" id="9Af-oM-fkh"/>
-                            <constraint firstItem="gpB-aw-rHg" firstAttribute="leading" secondItem="tL9-oD-z5d" secondAttribute="leading" id="9Dk-Cc-wnu"/>
-                            <constraint firstItem="WeW-49-ZWK" firstAttribute="top" secondItem="a8v-dO-Pa4" secondAttribute="bottom" constant="10" id="9Xv-Ws-fpA"/>
-                            <constraint firstItem="gpB-aw-rHg" firstAttribute="top" secondItem="tL9-oD-z5d" secondAttribute="bottom" constant="250" id="9f8-bI-HqM"/>
-                            <constraint firstItem="Fis-at-B3N" firstAttribute="top" secondItem="tL9-oD-z5d" secondAttribute="bottom" constant="8" id="B7z-rp-bOJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Xef-AJ-IaK" secondAttribute="trailing" id="FLL-VM-o20"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="a8v-dO-Pa4" secondAttribute="leading" id="OgW-PB-xxL"/>
-                            <constraint firstItem="a8v-dO-Pa4" firstAttribute="top" secondItem="dIo-fW-7aE" secondAttribute="bottom" constant="20" id="PPu-en-Q5b"/>
-                            <constraint firstItem="Hu7-q7-L7g" firstAttribute="leading" secondItem="a8v-dO-Pa4" secondAttribute="trailing" constant="10" id="Qnz-2t-HBa"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="Xef-AJ-IaK" secondAttribute="leading" id="VZU-J6-rPi"/>
-                            <constraint firstItem="Hu7-q7-L7g" firstAttribute="baseline" secondItem="a8v-dO-Pa4" secondAttribute="baseline" id="bBQ-pA-xH8"/>
-                            <constraint firstItem="Hu7-q7-L7g" firstAttribute="leading" secondItem="QS0-QP-J2V" secondAttribute="leadingMargin" constant="120" id="cE8-qJ-yeD"/>
-                            <constraint firstItem="iAU-kT-BV7" firstAttribute="top" secondItem="Xef-AJ-IaK" secondAttribute="bottom" id="dZQ-tK-cJn"/>
-                            <constraint firstItem="tL9-oD-z5d" firstAttribute="leading" secondItem="a8v-dO-Pa4" secondAttribute="leading" id="fJh-IC-JXj"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="Fis-at-B3N" secondAttribute="leading" id="fkx-wf-y9h"/>
-                            <constraint firstItem="tL9-oD-z5d" firstAttribute="leading" secondItem="QS0-QP-J2V" secondAttribute="leadingMargin" id="hda-01-bOu"/>
-                            <constraint firstItem="gpB-aw-rHg" firstAttribute="top" secondItem="Fis-at-B3N" secondAttribute="bottom" constant="8" id="iUq-wx-sGZ"/>
-                            <constraint firstItem="Hu7-q7-L7g" firstAttribute="top" secondItem="dIo-fW-7aE" secondAttribute="bottom" constant="20" id="k2Q-if-j3b"/>
-                            <constraint firstItem="qrT-ha-brY" firstAttribute="top" secondItem="WeW-49-ZWK" secondAttribute="bottom" id="lfP-Jl-w3t"/>
-                            <constraint firstItem="SCS-ul-FPv" firstAttribute="leading" secondItem="Hu7-q7-L7g" secondAttribute="leading" id="mXL-qm-mum"/>
-                            <constraint firstItem="WeW-49-ZWK" firstAttribute="leading" secondItem="a8v-dO-Pa4" secondAttribute="leading" id="tqN-rn-sIy"/>
-                            <constraint firstItem="qrT-ha-brY" firstAttribute="leading" secondItem="QS0-QP-J2V" secondAttribute="leadingMargin" constant="-20" id="u3c-5f-Ipm"/>
-                            <constraint firstItem="tL9-oD-z5d" firstAttribute="top" secondItem="qrT-ha-brY" secondAttribute="bottom" id="vjn-5x-1ub"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qrT-ha-brY" secondAttribute="trailing" constant="-20" id="xw7-hG-W2r"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="tqN-rn-sIy"/>
-                                <exclude reference="OgW-PB-xxL"/>
-                                <exclude reference="9Af-oM-fkh"/>
-                                <exclude reference="fJh-IC-JXj"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <connections>
-                        <outlet property="crewQuartersLabel" destination="SCS-ul-FPv" id="S3l-fr-Lhg"/>
-                        <outlet property="tableView1" destination="Fis-at-B3N" id="4hv-l4-Ddf"/>
-                        <outlet property="tableView2" destination="Xef-AJ-IaK" id="xJe-af-DDQ"/>
-                        <outlet property="typeLabel" destination="Hu7-q7-L7g" id="yXA-8S-hAO"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pjl-DM-7gZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1911" y="-4870"/>
-        </scene>
-        <!--Ship-->
         <scene sceneID="7vL-QO-bLV">
             <objects>
                 <viewController title="Ship" id="X0Z-Pa-keA" customClass="Ship2VC" customModule="SpaceTrader" customModuleProvider="target" sceneMemberID="viewController">
@@ -7734,30 +7092,6 @@
                                             <outlet property="keyLabel" destination="T7o-Jz-0HE" id="GUc-CV-OYd"/>
                                             <outlet property="valueLabel" destination="aGM-LN-ZIz" id="1og-og-va4"/>
                                         </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="u5B-QY-glQ">
-                                        <rect key="frame" x="0.0" y="99.5" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u5B-QY-glQ" id="69s-cj-3vr">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="3ZF-OO-Sur">
-                                        <rect key="frame" x="0.0" y="143.5" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3ZF-OO-Sur" id="0Tc-Mn-TDI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fW2-wd-s4b">
-                                        <rect key="frame" x="0.0" y="187.5" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fW2-wd-s4b" id="Xyp-0A-Tqy">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -7822,10 +7156,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="U1V-Qc-wZC" id="qUT-RE-OOk"/>
-                        <segue destination="jA6-fh-QL3" kind="show" identifier="shipSegueOld" id="53N-xp-IUJ"/>
                         <segue destination="Lcm-tf-PiG" kind="show" identifier="questsSegue" id="Ar9-K4-bFr"/>
                         <segue destination="w91-2u-hYv" kind="show" identifier="bankSegue" id="kNQ-SZ-n7e"/>
-                        <segue destination="1s8-qu-jkZ" kind="show" identifier="personnelSegueOld" id="Cl3-zi-3cm"/>
                         <segue destination="hAw-Mn-ebQ" kind="show" identifier="gameMenuToNewGame" id="3Q1-XC-r58"/>
                         <segue destination="Qju-ZK-wY0" kind="show" identifier="saveGameSegue" id="UNn-vJ-URu"/>
                         <segue destination="ZDb-nH-Noz" kind="show" identifier="loadGameFromMenuOld" id="Btw-3O-mir"/>
@@ -7927,6 +7259,7 @@
                     <tabBarItem key="tabBarItem" title="Sell" image="sellGray" selectedImage="sellPurple" id="fqL-iM-jsK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xNB-W6-DCU">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -7945,6 +7278,7 @@
                     <tabBarItem key="tabBarItem" title="Buy" image="buyPurple" id="tCy-DU-he4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="NKL-Mv-SN1">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -7963,6 +7297,7 @@
                     <tabBarItem key="tabBarItem" title="Shipyard" image="shipyardGray" id="PVH-J6-ham"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hoF-lB-X4f">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -7981,6 +7316,7 @@
                     <tabBarItem key="tabBarItem" title="Warp" image="warpGray" selectedImage="warpPurple" id="baq-B6-ql5" userLabel="Warp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oIN-Uy-z6S">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -8020,6 +7356,7 @@
                     <tabBarItem key="tabBarItem" title="System" image="systemGray" selectedImage="systemPurple" id="keX-wq-2Y3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="deE-ce-0Jw">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -8048,43 +7385,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QYw-wq-q17" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8195" y="372"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="uzE-dv-rr4">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zMc-Wk-QNY" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lKt-ur-Rc9">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="toB-3f-y7D" kind="relationship" relationship="rootViewController" id="d2e-DZ-Q9h"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A0F-c1-DjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8074" y="2243"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="tin-7o-XWx">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6xM-0L-v7u" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="92n-Ms-TsF">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="1s8-qu-jkZ" kind="relationship" relationship="rootViewController" id="c3w-zS-mG3"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B38-gd-3f4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2676" y="-2975"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eUp-Wk-Owq">
@@ -8515,15 +7815,12 @@
         <segue reference="pZh-7V-Edf"/>
         <segue reference="94b-YL-qQM"/>
         <segue reference="LdK-j7-SWM"/>
-        <segue reference="gLW-Zt-l96"/>
-        <segue reference="Cl3-zi-3cm"/>
         <segue reference="XhI-dd-ihR"/>
         <segue reference="Rcc-24-Noc"/>
         <segue reference="K2U-qg-SzU"/>
         <segue reference="Zhh-Pf-9hC"/>
         <segue reference="QJh-Dr-ysc"/>
         <segue reference="c5m-hx-g89"/>
-        <segue reference="kdA-Wi-tPd"/>
         <segue reference="1Eh-mE-ldv"/>
         <segue reference="LND-dr-SJk"/>
     </inferredMetricsTieBreakers>

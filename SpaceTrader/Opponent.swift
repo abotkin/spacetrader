@@ -540,8 +540,8 @@ class Opponent: NSObject, NSCoding {
             baysToBeFilled = rand(((totalBays / 5) * 2), min: 0)
         }
         
-        baysToBeFilled + rand(10)
-        baysToBeFilled - rand(10)
+        baysToBeFilled += rand(10)
+        baysToBeFilled -= rand(10)
         if baysToBeFilled > ship.totalBays {
             baysToBeFilled = ship.totalBays
         } else if baysToBeFilled < 0 {
