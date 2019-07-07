@@ -600,7 +600,7 @@ class Galaxy: NSObject, NSCoding {
         return min
     }
     
-    func verifyAndFixProximity() -> Bool {
+    @discardableResult func verifyAndFixProximity() -> Bool {
         // could calculate continuous chain
         print("running verifyAndFixProximity")
         
@@ -1741,7 +1741,7 @@ class Galaxy: NSObject, NSCoding {
         self.trackedSystem = nil
     }
     
-    func warp() -> Bool {
+    @discardableResult func warp() -> Bool {
         // let journeyDistance = getDistance(currentSystem!, system2: targetSystem!)
         // print("pre-warp fuel: \(player.commanderShip.fuel)")
         // print("target system in range? \(targetSystemInRange)")
@@ -1810,7 +1810,7 @@ class Galaxy: NSObject, NSCoding {
         return false
     }
     
-    func warpWithSingularity() -> Bool {
+    @discardableResult func warpWithSingularity() -> Bool {
         
         var canWeWarp = true
         

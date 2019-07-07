@@ -19,7 +19,7 @@ class SearchVC: UIViewController, UITextFieldDelegate {
         textField.becomeFirstResponder()    // keyboard appears on load
     }
 
-    func textFieldShouldReturn(_ textField: UITextField!) -> Bool
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         textField.resignFirstResponder()
         // do search, set either target or tracked

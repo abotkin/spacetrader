@@ -49,7 +49,7 @@ class ShortRangeChartView: UIView {
         //print("short range chart display height: \(self.bounds.height) points")
         
         // draw range circle
-        let rangeCirclePath = UIBezierPath(arcCenter: locationOfCurrentPlanet, radius: rangeCircleRadius, startAngle: 0, endAngle: CGFloat(2*M_PI), clockwise: true)
+        let rangeCirclePath = UIBezierPath(arcCenter: locationOfCurrentPlanet, radius: rangeCircleRadius, startAngle: 0, endAngle: CGFloat(2*Double.pi), clockwise: true)
         rangeCirclePath.lineWidth = 1
         circleColor.set()
         rangeCirclePath.stroke()
@@ -185,7 +185,7 @@ class ShortRangeChartView: UIView {
     
     func drawPlanetCircle(_ location: CGPoint, visited: Bool) {
         let planetRadius = CGFloat(4)
-        let planetCircle = UIBezierPath(arcCenter: location, radius: planetRadius, startAngle: 0, endAngle: CGFloat(2*M_PI), clockwise: true)
+        let planetCircle = UIBezierPath(arcCenter: location, radius: planetRadius, startAngle: 0, endAngle: CGFloat(2*Double.pi), clockwise: true)
         let unvisitedColor: UIColor = mapGreen
         let visitedColor: UIColor = mapBlue
         
@@ -204,7 +204,7 @@ class ShortRangeChartView: UIView {
         let wormholeDrawLocationX = location.x
         let wormholeDrawLocationY = location.y
         let wormholeDrawLocation = CGPoint(x: wormholeDrawLocationX, y: wormholeDrawLocationY)
-        let wormholeCircle = UIBezierPath(arcCenter: wormholeDrawLocation, radius: planetRadius, startAngle: 0, endAngle: CGFloat(2*M_PI), clockwise: true)
+        let wormholeCircle = UIBezierPath(arcCenter: wormholeDrawLocation, radius: planetRadius, startAngle: 0, endAngle: CGFloat(2*Double.pi), clockwise: true)
         UIColor.red.setStroke()
         UIColor.white.setFill()
         wormholeCircle.stroke()

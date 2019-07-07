@@ -759,8 +759,6 @@ class SpaceShip: NSObject, NSCoding {
                 self.traders = 8
                 self.repairCosts = 1
                 self.probabilityOfHit = 1
-            default:
-                print("error")
         }
         
         self.IFFStatus = IFFStatus
@@ -773,7 +771,7 @@ class SpaceShip: NSObject, NSCoding {
     // THESE ARE THE ONLY METHODS THAT SHOULD DIRECTLY ADD, REMOVE, OR MEASURE AMOUNT OF CARGO************
     
     // addCargo and removeCargo functions assume quantities have been checked, but return false if not
-    func addCargo(_ commodity: TradeItemType, quantity: Int, pricePaid: Int) -> Bool {
+    @discardableResult func addCargo(_ commodity: TradeItemType, quantity: Int, pricePaid: Int) -> Bool {
         // fail if not enough space
         if baysAvailable < quantity {
             return false
@@ -802,7 +800,7 @@ class SpaceShip: NSObject, NSCoding {
         return true
     }
     
-    func removeCargo(_ commodity: TradeItemType, quantity: Int) -> Bool {
+    @discardableResult func removeCargo(_ commodity: TradeItemType, quantity: Int) -> Bool {
         // returns false if not that many on ship
         for item in cargo {
             if item.item == commodity {
@@ -944,7 +942,7 @@ class SpaceShip: NSObject, NSCoding {
         }
     }
     
-    func removeCrewMember(_ id: MercenaryName) -> Bool {
+    @discardableResult func removeCrewMember(_ id: MercenaryName) -> Bool {
         var removeIndex: Int?
         var i = 0
         for member in crew {
@@ -961,7 +959,7 @@ class SpaceShip: NSObject, NSCoding {
         }
     }
     
-    func removeWeapon(_ type: WeaponType) -> Bool {
+    @discardableResult func removeWeapon(_ type: WeaponType) -> Bool {
         // removes one of the weapons of specified type
         var index = 0
         for item in weapon {
@@ -974,7 +972,7 @@ class SpaceShip: NSObject, NSCoding {
         return false
     }
     
-    func removeShield(_ type: ShieldType) -> Bool {
+    @discardableResult func removeShield(_ type: ShieldType) -> Bool {
         // removes shield of specified type
         var index = 0
         for item in shield {

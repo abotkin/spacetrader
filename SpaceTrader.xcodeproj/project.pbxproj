@@ -100,6 +100,7 @@
 		5AF1CA2F1BAB3E7A00643C5F /* BuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF1CA2E1BAB3E7A00643C5F /* BuyVC.swift */; };
 		5AFEB63B1C4954E9000F51BE /* SavedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFEB63A1C4954E9000F51BE /* SavedGame.swift */; };
 		5AFEB63D1C497056000F51BE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFEB63C1C497056000F51BE /* Extensions.swift */; };
+		62E42AF422D29B0600084C27 /* DefaultStringInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E42AF322D29B0600084C27 /* DefaultStringInterpolation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,6 +211,7 @@
 		5AF1CA2E1BAB3E7A00643C5F /* BuyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyVC.swift; sourceTree = "<group>"; };
 		5AFEB63A1C4954E9000F51BE /* SavedGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedGame.swift; sourceTree = "<group>"; };
 		5AFEB63C1C497056000F51BE /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		62E42AF322D29B0600084C27 /* DefaultStringInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStringInterpolation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +315,7 @@
 				5AF1CA2B1BA365DC00643C5F /* ViewControllers */,
 				5AD5F8BC1B9E948F00154B21 /* Classes */,
 				5AD5F8B31B9DEB5300154B21 /* DataTypes.swift */,
+				62E42AF322D29B0600084C27 /* DefaultStringInterpolation.swift */,
 				5AD5F8B71B9E1B5C00154B21 /* Enums.swift */,
 			);
 			path = SpaceTrader;
@@ -601,6 +604,7 @@
 				5AF0AAF71BD193B900BBE7CA /* Opponent.swift in Sources */,
 				5ABB697D1C0E86C000ABEB9E /* EquipmentDetailVC.swift in Sources */,
 				5A518FB61BC80CF800021B13 /* FuelRepairModalVC.swift in Sources */,
+				62E42AF422D29B0600084C27 /* DefaultStringInterpolation.swift in Sources */,
 				5A34BDAC1CA47B950099BC75 /* Ship2VC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
