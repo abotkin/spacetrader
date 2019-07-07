@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,25 +14,22 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="splashBird" translatesAutoresizingMaskIntoConstraints="NO" id="GOc-hm-aPf">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashBird" translatesAutoresizingMaskIntoConstraints="NO" id="GOc-hm-aPf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="GOc-hm-aPf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="4zG-bn-VxI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GOc-hm-aPf" secondAttribute="trailing" constant="-20" id="ajS-vn-HEF"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="GOc-hm-aPf" secondAttribute="bottom" id="ovb-8m-VjQ"/>
-                            <constraint firstItem="GOc-hm-aPf" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="vLH-ha-m2R"/>
+                            <constraint firstItem="GOc-hm-aPf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="4zG-bn-VxI"/>
+                            <constraint firstAttribute="trailing" secondItem="GOc-hm-aPf" secondAttribute="trailing" id="ajS-vn-HEF"/>
+                            <constraint firstAttribute="bottom" secondItem="GOc-hm-aPf" secondAttribute="bottom" id="ovb-8m-VjQ"/>
+                            <constraint firstItem="GOc-hm-aPf" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="vLH-ha-m2R"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="zFl-AF-TSF"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
