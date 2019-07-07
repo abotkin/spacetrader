@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         // set tab bar tint color
@@ -26,15 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // set navigation controller font
         UINavigationBar.appearance().titleTextAttributes = [
-            NSAttributedStringKey.font: UIFont(name: "AvenirNext-DemiBold", size: 20)!
+            NSAttributedString.Key.font: UIFont(name: "AvenirNext-DemiBold", size: 20)!
         ]
         
         // set global textView font
         UITextView.appearance().font = UIFont(name: "AvenirNext-DemiBold", size: 14)!
         
         // set navigation bar button font
-        let controlState = UIControlState()
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "AvenirNext-DemiBold", size: 16)!], for: controlState)
+        let controlState = UIControl.State()
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "AvenirNext-DemiBold", size: 16)!], for: controlState)
         
         // THIS WAS OVERRIDING OTHER THINGS
         // set global font, used wherever not set otherwise

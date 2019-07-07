@@ -36,7 +36,7 @@ class JettisonPickerVC: UIViewController {
         slider.tintColor = mainPurple
         
         // set page title & button name
-        let controlState = UIControlState()
+        let controlState = UIControl.State()
         if plunderAsOpposedToJettison {
             titleLabel.text = "Plunder \(commodity.rawValue)"
             plunderButtonOutlet.setTitle("Plunder", for: controlState)
@@ -117,8 +117,8 @@ class JettisonPickerVC: UIViewController {
                 let title = "Space Littering"
                 let message = "Dumping cargo in space is considered littering. If the police find your dumped goods and track them to you, this will influence your record. Do you really wish to dump?"
                 
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive ,handler: {
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive ,handler: {
                     (alert: UIAlertAction!) -> Void in
                     // dump, set littering flag, send delegate message, close
                     player.commanderShip.removeCargo(self.commodity, quantity: Int(self.slider.value))
@@ -127,7 +127,7 @@ class JettisonPickerVC: UIViewController {
                     self.delegate?.plunderPickerDidFinish(self)
                     self.dismiss(animated: false, completion: nil)
                 }))
-                alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default ,handler: {
+                alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default ,handler: {
                     (alert: UIAlertAction!) -> Void in
                     // close window
                     self.dismiss(animated: false, completion: nil)

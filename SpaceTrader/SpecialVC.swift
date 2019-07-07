@@ -36,7 +36,7 @@ class SpecialVC: UIViewController {
             specialEventText.text = player.specialEvents.specialEventText
             
             // set button texts
-            let controlState = UIControlState()
+            let controlState = UIControl.State()
             dismissButtonOutlet.setTitle(player.specialEvents.yesDismissButtonText, for: controlState)
             noButtonOutlet.setTitle(player.specialEvents.noButtonText, for: controlState)
             
@@ -586,9 +586,9 @@ class SpecialVC: UIViewController {
     func generateAlert(_ alert: Alert) {
         // this is the new version. It's functionality is completely contained within the VC
         
-        let alertController = UIAlertController(title: alert.header, message: alert.text, preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: alert.header, message: alert.text, preferredStyle: UIAlertController.Style.alert)
         
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // if yes pressed, return true
             self.closeSpecialVC()

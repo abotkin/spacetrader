@@ -75,10 +75,10 @@ class BankVC: UIViewController {
         
         // set buy/stop insurance
         if player.insurance {
-            let controlState = UIControlState()
+            let controlState = UIControl.State()
             buyInsuranceOutlet.setTitle("Stop Insurance", for: controlState)
         } else {
-            let controlState = UIControlState()
+            let controlState = UIControl.State()
             buyInsuranceOutlet.setTitle("Buy Insurance", for: controlState)
         }
     }
@@ -122,13 +122,13 @@ class BankVC: UIViewController {
             let title = "Stop Insurance"
             let message = "Do you really want to stop your insurance and lose your no-claim?"
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 player.insurance = false
                 self.setData()
             }))
-            alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel ,handler: {
+            alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // do nothing
             }))
@@ -144,8 +144,8 @@ class BankVC: UIViewController {
                 let title = "No Escape Pod"
                 let message = "Insurance isn't useful to you, since you don't have an escape pod."
                 
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                     (alert: UIAlertAction!) -> Void in
                     // do nothing
                 }))

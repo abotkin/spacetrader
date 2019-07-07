@@ -37,7 +37,7 @@ class NewGameVC: UIViewController {
         }
 
         // send view to background. Not possible to do this in IB
-        self.view.sendSubview(toBack: backgroundImage)
+        self.view.sendSubviewToBack(backgroundImage)
         
         // layout constraints
         // adjust sizes if needed

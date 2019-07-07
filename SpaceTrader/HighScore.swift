@@ -72,7 +72,7 @@ class HighScore: NSObject, NSCoding {
         self.status = EndGameStatus(rawValue: decoder.decodeInteger(forKey: "status"))!
         self.days = decoder.decodeInteger(forKey: "days")
         self.worth = decoder.decodeInteger(forKey: "worth")
-        self.difficulty = DifficultyType(rawValue: decoder.decodeObject(forKey: "difficulty") as! String!)!
+        self.difficulty = DifficultyType(rawValue: (decoder.decodeObject(forKey: "difficulty") as! String?)!)!
         self.score = decoder.decodeInteger(forKey: "score")
 
         super.init()

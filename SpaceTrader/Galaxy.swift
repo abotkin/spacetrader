@@ -1890,7 +1890,7 @@ class Galaxy: NSObject, NSCoding {
             specialIndex += 1
             
             // dig planet with that name out of the array, assign its specialEvent
-            if let index = self.planets.index(where: { $0.name == planetNameToAssign }) {
+            if let index = self.planets.firstIndex(where: { $0.name == planetNameToAssign }) {
                 self.planets[index].specialEvent = quest
                 //print("Assigned special \(quest as Any) to \(self.planets[index].name)")
             }

@@ -31,7 +31,7 @@ class CrewMember: NSObject, NSCoding {
     
     // NSCODING METHODS
     required init(coder decoder: NSCoder) {
-        self.ID = MercenaryName(rawValue: decoder.decodeObject(forKey: "ID") as! String!)!
+        self.ID = MercenaryName(rawValue: (decoder.decodeObject(forKey: "ID") as! String?)!)!
         self.name = decoder.decodeObject(forKey: "name") as! String
         self.pilot = decoder.decodeInteger(forKey: "pilot")
         self.fighter = decoder.decodeInteger(forKey: "fighter")

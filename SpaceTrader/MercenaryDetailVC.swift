@@ -36,7 +36,7 @@ class MercenaryDetailVC: UIViewController {
         traderLabel.text = "\(selectedMercenary!.trader)"
         engineerLabel.text = "\(selectedMercenary!.engineer)"
         
-        let controlState = UIControlState()
+        let controlState = UIControl.State()
         if hireNotFire! {
             hireButtonLabel.setTitle("Hire", for: controlState)
         } else {
@@ -56,8 +56,8 @@ class MercenaryDetailVC: UIViewController {
                 let title = "No Quarters Available"
                 let message = "You do not have quarters available for \(selectedMercenary!.name)."
                 
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                     (alert: UIAlertAction!) -> Void in
                     // do nothing
                 }))
@@ -69,12 +69,12 @@ class MercenaryDetailVC: UIViewController {
             let title = "Fire Mercenary"
             let message = "Are you sure you want fire \(selectedMercenary!.name)?"
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 self.fireMercenary()
             }))
-            alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default ,handler: {
+            alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // do nothing
             }))

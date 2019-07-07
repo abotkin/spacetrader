@@ -87,15 +87,15 @@ class DockVC: UIViewController {
         let title: String = "Escape Pod"
         let message: String = "Do you want to buy an escape pod for 2,000 credits?"
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // buy pod
             player.credits -= 2000
             player.escapePod = true
             self.updateUI()
         }))
-        alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel ,handler: {
+        alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel ,handler: {
             (alert: UIAlertAction!) -> Void in
             // nothing, just close the modal
         }))

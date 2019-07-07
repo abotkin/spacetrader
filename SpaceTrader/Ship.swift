@@ -999,7 +999,7 @@ class SpaceShip: NSObject, NSCoding {
             self.crewQuarters = decoder.decodeInteger(forKey: "crewQuarters")
             self.fuelTanks = decoder.decodeInteger(forKey: "fuelTanks")
             self.size = decoder.decodeObject(forKey: "size") as! String
-            self.minTechLevel = TechLevelType(rawValue: decoder.decodeObject(forKey: "minTechLevel") as! String!)!
+            self.minTechLevel = TechLevelType(rawValue: (decoder.decodeObject(forKey: "minTechLevel") as! String?)!)!
             self.costOfFuel = decoder.decodeInteger(forKey: "costOfFuel")
             self.price = decoder.decodeInteger(forKey: "price")
             self.bounty = decoder.decodeInteger(forKey: "bounty")
@@ -1019,7 +1019,7 @@ class SpaceShip: NSObject, NSCoding {
             self.raided = decoder.decodeBool(forKey: "raided")
             //self.justLootedMarieCeleste = decoder.decodeObjectForKey("justLootedMarieCeleste") as! Bool
             self.disabled = decoder.decodeBool(forKey: "disabled")
-            self.IFFStatus = IFFStatusType(rawValue: decoder.decodeObject(forKey: "IFFStatus") as! String!)!
+            self.IFFStatus = IFFStatusType(rawValue: (decoder.decodeObject(forKey: "IFFStatus") as! String?)!)!
             
             self.cargo = decoder.decodeObject(forKey: "cargo") as! [TradeItem]
             self.weapon = decoder.decodeObject(forKey: "weapon") as! [Weapon]

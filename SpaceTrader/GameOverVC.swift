@@ -75,8 +75,8 @@ class GameOverVC: UIViewController {
             message = "You scored \(scoreFormatted). You did not make the high score list."
         }
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             print("supposed to perform segue to gameOverHighScores now")
             self.performSegue(withIdentifier: "gameOverHighScores", sender: nil)

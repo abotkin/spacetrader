@@ -43,13 +43,13 @@ class DesignNaSVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func continueTapped(_ sender: AnyObject) {
         // verify user entered a name
-        if nameTextField.text!.characters.count == 0 {
+        if nameTextField.text!.count == 0 {
             // alert, need to specify a name before proceeding
             let title = "Enter a Name"
             let message = "To proceed, please enter a name for your new ship."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // do nothing
             }))

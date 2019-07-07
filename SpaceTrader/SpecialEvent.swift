@@ -26,7 +26,7 @@ class SpecialEvents: NSObject, NSCoding {
         didSet {
             for quest in quests {
                 if quest.questString == "" {
-                    let i = quests.index(of: quest)
+                    let i = quests.firstIndex(of: quest)
                     quests.remove(at: i!)
                 }
             }

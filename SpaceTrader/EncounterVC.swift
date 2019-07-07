@@ -13,7 +13,7 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
         super.viewDidLoad()
         
         // send view to background. Not possible to do this in IB
-        self.view.sendSubview(toBack: backgroundView)
+        self.view.sendSubviewToBack(backgroundView)
         
         // EXPERIMENTAL: sending buttons to front
         //self.view.sendSubview(toFront: button1Text)
@@ -48,7 +48,7 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
         //firstTextBlock.text = galaxy.currentJourney!.currentEncounter!.encounterText1
         secondTextBlock.text = galaxy.currentJourney!.currentEncounter!.encounterText2
         
-        let controlState = UIControlState()
+        let controlState = UIControl.State()
         button1Text.setTitle("\(galaxy.currentJourney!.currentEncounter!.button1Text)", for: controlState)
         button2Text.setTitle("\(galaxy.currentJourney!.currentEncounter!.button2Text)", for: controlState)
         button3Text.setTitle("\(galaxy.currentJourney!.currentEncounter!.button3Text)", for: controlState)
@@ -362,8 +362,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title: String = "Attack Police?"
             let message: String = "Are you sure you want to attack the police? Your police record will be set to criminal!"
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Attack", style: UIAlertActionStyle.destructive,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Attack", style: UIAlertAction.Style.destructive,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // go ahead with it
                 player.policeRecord = PoliceRecordType.criminalScore
@@ -371,7 +371,7 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
                 galaxy.currentJourney!.currentEncounter!.setButtons("Attack")
                 self.actuallyAttack()
             }))
-            alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default,handler: nil))
+            alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default,handler: nil))
             // do nothing, dismiss modal
             self.present(alertController, animated: true, completion: nil)
             
@@ -381,14 +381,14 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title: String = "Attack Trader?"
             let message: String = "Are you sure you want to attack the police? Your police record will be set to dubious!"
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Attack", style: UIAlertActionStyle.destructive,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Attack", style: UIAlertAction.Style.destructive,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // go ahead with it
                 player.policeRecord = PoliceRecordType.dubiousScore
                 self.actuallyAttack()
             }))
-            alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default,handler: nil))
+            alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default,handler: nil))
             // do nothing, dismiss modal
             self.present(alertController, animated: true, completion: nil)
         } else if galaxy.currentJourney!.currentEncounter!.opponent.ship.IFFStatus == IFFStatusType.Scorpion {
@@ -405,8 +405,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
                 let title: String = "No Disabling Weapons"
                 let message: String = "You have no disabling weapons! You would only be able to destroy your opponent, which would defeat the purpose of your quest."
                 
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: {
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default,handler: {
                     (alert: UIAlertAction!) -> Void in
                     // flag to false, can't attack
                     self.actuallyAttack()
@@ -422,14 +422,14 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title: String = "Really Attack?"
             let message: String = "Famous Captains get famous by, among other things, destroying everyone who attacks them. Do you really want to attack?"
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Really Attack", style: UIAlertActionStyle.destructive,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Really Attack", style: UIAlertAction.Style.destructive,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // go ahead with it
                 galaxy.currentJourney!.currentEncounter!.warnedYet = true
                 self.actuallyAttack()
             }))
-            alertController.addAction(UIAlertAction(title: "OK, I Won't", style: UIAlertActionStyle.default,handler: nil))
+            alertController.addAction(UIAlertAction(title: "OK, I Won't", style: UIAlertAction.Style.default,handler: nil))
             // do nothing, dismiss modal
             self.present(alertController, animated: true, completion: nil)
             
@@ -447,8 +447,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
                 let title: String = "No Hull-Damaging Weapons"
                 let message: String = "You only have disabling weapons, but your opponent cannot be disabled!"
                 
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default,handler: nil))
                 // do nothing, dismiss modal
                 self.present(alertController, animated: true, completion: nil)
             } else {
@@ -462,8 +462,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
                 let title: String = "No Weapons"
                 let message: String = "You can't attack without weapons!"
                 
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: {
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default,handler: {
                     (alert: UIAlertAction!) -> Void in
                     // do nothing
                 }))
@@ -516,8 +516,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "Meet Captain Ahab"
             let message = "Captain Ahab is in need of a spare shield for an upcoming mission. He offers to trade you some piloting lessons for your reflective shield. Do you wish to trade?"
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Yes, Trade Shield", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Yes, Trade Shield", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // give up shield
                 player.commanderShip.removeShield(ShieldType.reflectiveShield)
@@ -528,7 +528,7 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
                 // fire second alert and close
                 self.famousCaptainTraining()
             }))
-            alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel ,handler: {
+            alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // dismiss and conclude encounter
                 self.dismissViewController()
@@ -540,8 +540,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "Meet Captain Conrad"
             let message = "Captain Conrad is in need of a military laser. She offers to trade you some engineering training for your military laser. Do you wish to trade?"
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Yes, Trade Laser", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Yes, Trade Laser", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // TRADE LASER
                 // give up laser
@@ -553,7 +553,7 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
                 // fire second alert and close
                 self.famousCaptainTraining()
             }))
-            alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel ,handler: {
+            alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // dismiss and conclude encounter
                 self.dismissViewController()
@@ -565,8 +565,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "Meet Captain Huie"
             let message = "Captain Huie is in need of a military laser. She offers to exchange some bargaining training for your military laser. Do you wish to trade?"
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Yes, Trade Laser", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Yes, Trade Laser", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // TRADE LASER
                 // give up laser
@@ -578,7 +578,7 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
                 // fire second alert and close
                 self.famousCaptainTraining()
             }))
-            alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel ,handler: {
+            alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // dismiss and conclude encounter
                 self.dismissViewController()
@@ -593,14 +593,14 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
         let title = "Drink Contents?"
         let message = "You have come across an extremely rare bottle of Captain Marmoset's Amazing Skill Tonic! The \"use-by\" date is illegible, but might still be good.  Would you like to drink it?"
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Yes, Drink It", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Yes, Drink It", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // DRINK IT
             self.drinkTonic()
             
         }))
-        alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel ,handler: {
+        alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel ,handler: {
             (alert: UIAlertAction!) -> Void in
             // dismiss and conclude encounter
             self.dismissViewController()
@@ -613,13 +613,13 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
         let title = "Engage Marie Celeste"
         let message = "The ship is empty: there is nothing in the ship’s log, but the crew has vanished, leaving food on the tables and cargo in the holds. Do you wish to offload the cargo into your own holds?"
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Yes, Take Cargo", style: UIAlertActionStyle.destructive ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Yes, Take Cargo", style: UIAlertAction.Style.destructive ,handler: {
             (alert: UIAlertAction!) -> Void in
             // PLUNDER. Marie celeste should have 5 narcotics
             self.plunder()
         }))
-        alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel ,handler: {
+        alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel ,handler: {
             (alert: UIAlertAction!) -> Void in
             // dismiss and conclude encounter
             self.dismissViewController()
@@ -640,8 +640,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title: String = "Criminal Act!"
             let message: String = "Are you sure you want to do that? The Customs Police know you have engaged in criminal activity, and will report it!"
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Yes, I still want to", style: UIAlertActionStyle.destructive ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Yes, I still want to", style: UIAlertAction.Style.destructive ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // set police record to dubious if better, flee
                 if player.policeRecordInt > 4 {
@@ -649,7 +649,7 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
                 }
                 actuallyFlee = true
             }))
-            alertController.addAction(UIAlertAction(title: "OK, I won't", style: UIAlertActionStyle.default ,handler: {
+            alertController.addAction(UIAlertAction(title: "OK, I won't", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // nothing, just close the modal
                 actuallyFlee = false
@@ -660,8 +660,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title: String = "You Have Nothing Illegal"
             let message: String = "Are you sure you want to do that? You are not carrying illegal goods, so you have nothing to fear!"
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Yes, I still want to", style: UIAlertActionStyle.destructive ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Yes, I still want to", style: UIAlertAction.Style.destructive ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // set police record to dubious if better, flee
                 if player.policeRecordInt > 4 {
@@ -669,7 +669,7 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
                 }
                 actuallyFlee = true
             }))
-            alertController.addAction(UIAlertAction(title: "OK, I won't", style: UIAlertActionStyle.default ,handler: {
+            alertController.addAction(UIAlertAction(title: "OK, I won't", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // nothing, just close the modal
                 actuallyFlee = false
@@ -709,8 +709,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
                 let title = "Escaped"
                 let message = "You have managed to escape your opponent."
                 
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                     (alert: UIAlertAction!) -> Void in
                     // dismiss and conclude encounter
                     self.dismissViewController()
@@ -780,8 +780,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
                 let title = "Pirates Find No Cargo"
                 let message = "The pirates are very angry that they find no cargo on your ship. To stop them from destroying you, you have no choice but to pay them an amount equal to 5% of your current worth—\(moneyToTakeFormatted) credits."
                 
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                     (alert: UIAlertAction!) -> Void in
                     // dismiss and conclude encounter
                     self.dismissViewController()
@@ -837,8 +837,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
                 let title = "Looting"
                 let message = "The pirates board your ship and transfer as much of your cargo to their own ship as their cargo bays can hold."
                 
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                     (alert: UIAlertAction!) -> Void in
                     // dismiss and conclude encounter
                     self.dismissViewController()
@@ -858,8 +858,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "Artifact Relinquished"
             let message = "The aliens take the artifact from you."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // dismiss and conclude encounter
                 self.dismissViewController()
@@ -882,8 +882,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "Nothing Found"
             let message = "The police find nothing illegal in your cargo holds, and apologise for the inconvenience."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // dismiss and conclude encounter
                 self.dismissViewController()
@@ -895,13 +895,13 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "You Have Illegal Goods"
             let message = "Are you sure you want to let the police search you? You are carrying illegal goods!"
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Yes, let them", style: UIAlertActionStyle.destructive ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Yes, let them", style: UIAlertAction.Style.destructive ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // arrest. SHOULD WE DISMISS THIS VIEW AND DO THIS FROM THE PARENT?
                 self.arrest()
             }))
-            alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default ,handler: {
+            alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // nothing, dismiss alert
                 
@@ -919,8 +919,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
         let title = "Contraband Removed"
         let message = "The Customs Police confiscated all of your illegal cargo, but since you were cooperative, you avoided stronger fines or penalties."
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // remove illegal and dismiss
             self.removeIllegal()
@@ -946,8 +946,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "No Bribe"
             let message = "We'd love to take your money, but Space Command already knows you've got illegal goods onboard."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // dismiss alert
             }))
@@ -956,8 +956,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "No Bribe"
             let message = "These police officers can't be bribed."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // dismiss alert
             }))
@@ -974,8 +974,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "Bribe"
             let message = "These police officers are willing to forego inspection for the amount of 100 credits."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Offer Bribe", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Offer Bribe", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 if player.credits >= bribe {
                     player.credits -= bribe
@@ -985,8 +985,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
                     let title = "Not Enough Cash"
                     let message = "You don't have enough cash for a bribe."
                     
-                    let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-                    alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+                    let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                    alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                         (alert: UIAlertAction!) -> Void in
                         // dismiss alert
                     }))
@@ -995,7 +995,7 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
                 
                 
             }))
-            alertController.addAction(UIAlertAction(title: "Forget It", style: UIAlertActionStyle.cancel ,handler: {
+            alertController.addAction(UIAlertAction(title: "Forget It", style: UIAlertAction.Style.cancel ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // dismiss alert
             }))
@@ -1013,8 +1013,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
         let title = "Arrested"
         let message = "You are arrested and taken to the space station, where you are brought before a court of law."
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // fire trial and punishment method
             self.trialAndPunishment()
@@ -1066,8 +1066,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
         let title = "Opponent Escapes"
         let message = "Your opponent has gotten away."
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // dismiss and conclude encounter
             self.dismissViewController()
@@ -1120,8 +1120,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
         }
         
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // determine whether scoop will happen
             let random = rand(100)
@@ -1166,8 +1166,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
         let title = "Scoop"
         let message = "A canister from the destroyed ship, labeled \(item.name), drifts within range of your scoops."
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Pick It Up", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Pick It Up", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             if player.commanderShip.baysAvailable == 0 {
 //                print("NO ROOM TO SCOOP! HOW TO HANDLE THIS?")
@@ -1180,7 +1180,7 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             self.dismiss(animated: false, completion: nil)
             galaxy.currentJourney!.currentEncounter!.concludeEncounter()
         }))
-        alertController.addAction(UIAlertAction(title: "Let It Go", style: UIAlertActionStyle.cancel ,handler: {
+        alertController.addAction(UIAlertAction(title: "Let It Go", style: UIAlertAction.Style.cancel ,handler: {
             (alert: UIAlertAction!) -> Void in
             // dismiss and resume, for now
 //            print("you let it go")
@@ -1272,8 +1272,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "Scorpion Disabled"
             let message = "You have disabled the Scorpion. Without life support they'll have to hibernate. You notify Space Corps, and they come and tow the Scorpion to the planet, where the crew is revived and then arrested."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // dismiss and set special: princessRescued assigned to Qonos
                 galaxy.targetSystem!.specialEvent = SpecialEventID.princessRescued
@@ -1298,8 +1298,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
         let title = "You Lose"
         let message = "Your ship has been destroyed by your opponent."
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
         (alert: UIAlertAction!) -> Void in
             // trigger segue to game over
             self.performSegue(withIdentifier: "gameOver", sender: nil)
@@ -1338,8 +1338,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
         let title: String = "The Fight Continues!"
         let message: String = "Your opponent is still in pursuit."
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default,handler: nil))
         // do nothing, dismiss modal
         self.present(alertController, animated: true, completion: nil)
     }
@@ -1396,8 +1396,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
         let title = "Convicted"
         let message = "You are convicted to \(daysInPrison) days in prison and a fine of \(fineFormatted) credits."
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // begins down the chain. Each alert will fire if necessary
             self.jail1ReactorConfiscated()
@@ -1415,8 +1415,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "Police Confiscate Reactor"
             let message = "The Police confiscate the Ion reactor as evidence of your dealings with unsavory characters."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // call next function
                 self.jail2WildArrested()
@@ -1436,8 +1436,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "Wild Arrested"
             let message = "Jonathan Wild is arrested, and taken away to stand trial."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // call next function
                 self.jail3IllegalGoodsImpounded()
@@ -1459,8 +1459,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "Illegal Goods Impounded"
             let message = "The police also impound all of the illegal goods you have on board."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // call next function
                 self.jail4HiddenCargoBaysRemoved()
@@ -1494,8 +1494,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "Hidden Compartments Removed"
             let message = "When your ship is impounded, the police go over it with a fine-toothed comb. You hidden compartments are found and removed."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // call next function
                 self.jail5MercenariesLeave()
@@ -1522,8 +1522,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "Mercenaries Leave"
             let message = "Any mercenaries who were traveling with you have left."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // call next function
                 self.jail6InsuranceLost()
@@ -1549,8 +1549,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "Insurance Lost"
             let message = "Since you cannot pay your insurance while you're in prison, it is retracted."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // call next function
                 self.jail7ShipSold()
@@ -1580,8 +1580,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "Ship Sold"
             let message = "Because you don't have the credits to pay your fine, your ship is sold."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // call next function
                 self.jail8FleaReceived()
@@ -1600,8 +1600,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
         let title = "Flea Received"
         let message = "When you leave prison, the police have left a second-hand Flea for you so you can continue your travels."
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // call next function
             self.concludeArrest()
@@ -1640,8 +1640,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
         let title = "Training"
         let message = "Under the watchful eye of the Captain, you demonstrate your abilities. The Captain provides some helpful pointers and tips, and teaches you a few new techniques. The few hours pass quickly, but you feel you've gained a lot from the experience."
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // dismiss and conclude encounter
             self.dismissViewController()
@@ -1658,8 +1658,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "Tonic Consumed"
             let message = "Mmmmm. Captain Marmoset's Amazing Skill Tonic not only fills you with energy, but tastes like a fine single-malt."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // dismiss and conclude encounter
                 self.dismissViewController()
@@ -1674,8 +1674,8 @@ class EncounterVC: UIViewController, PlunderDelegate, TradeInOrbitDelegate {
             let title = "Tonic Consumed"
             let message = "While you don't know what it was supposed to taste like, you get the feeling that this dose of tonic was a bit off."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // dismiss and conclude encounter
                 self.dismissViewController()

@@ -50,8 +50,8 @@ class ShipDetailVC: UIViewController {
             let title = "Not Enough Money"
             let message = "You do not have enough money to buy this ship."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // do nothing
             }))
@@ -61,8 +61,8 @@ class ShipDetailVC: UIViewController {
             let title = "Too Many Crewmembers"
             let message = "The new ship you picked doesn't have enough quarters for all of your crewmembers. First you will have to fire one or more of them."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // do nothing
             }))
@@ -73,13 +73,13 @@ class ShipDetailVC: UIViewController {
                 let title = "Transfer Escape Pod"
                 let message = "I'll transfer your escape pod to your new ship for 200 credits."
                 
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "Do it!", style: UIAlertActionStyle.default ,handler: {
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "Do it!", style: UIAlertAction.Style.default ,handler: {
                     (alert: UIAlertAction!) -> Void in
                     // do nothing
                     self.buyNewShip(true)
                 }))
-                alertController.addAction(UIAlertAction(title: "No thanks", style: UIAlertActionStyle.cancel ,handler: {
+                alertController.addAction(UIAlertAction(title: "No thanks", style: UIAlertAction.Style.cancel ,handler: {
                     (alert: UIAlertAction!) -> Void in
                     self.buyNewShip(false)
                 }))
@@ -136,7 +136,7 @@ class ShipDetailVC: UIViewController {
         let priceFormatted = numberFormatter.string(from: NSNumber(value: price))!
         priceLabel.text = "\(priceFormatted) credits"
         
-        let controlState = UIControlState()
+        let controlState = UIControl.State()
         buyButton.setTitle("Buy \(ship!)", for: controlState)
         
         // disable when not available
@@ -184,13 +184,13 @@ class ShipDetailVC: UIViewController {
             message = "Are you sure you want to trade in your \(player.commanderShip.name) for a new \(prototypeShip.name), and transfer your unique equipment to the new ship?"
         }
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // do nothing
             self.completeTransaction(transferEscapePod)
         }))
-        alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel ,handler: {
+        alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel ,handler: {
             (alert: UIAlertAction!) -> Void in
             // nothing, dismiss alert
         }))

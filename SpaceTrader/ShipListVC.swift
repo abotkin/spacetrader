@@ -28,8 +28,8 @@ class ShipListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let title = "You've Got Tribbles"
             var message = "Hm. I see you got a tribble infestation on your current ship. I'm sorry, but that severely reduces the trade-in price."
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // do nothing
             }))

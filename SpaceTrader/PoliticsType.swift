@@ -235,18 +235,18 @@ class Politics: NSObject, NSCoding {
     
      // NSCODING METHODS
         required init(coder decoder: NSCoder) {
-            self.type = PoliticsType(rawValue: decoder.decodeObject(forKey: "type") as! String!)!
+            self.type = PoliticsType(rawValue: (decoder.decodeObject(forKey: "type") as! String?)!)!
             self.name = decoder.decodeObject(forKey: "name") as! String
             self.reactionIllegal = decoder.decodeInteger(forKey: "reactionIllegal")
             self.activityPolice = decoder.decodeInteger(forKey: "activityPolice")
             self.activityPirates = decoder.decodeInteger(forKey: "activityPirates")
             self.activityTraders = decoder.decodeInteger(forKey: "activityTraders")
-            self.minTech = TechLevelType(rawValue: decoder.decodeObject(forKey: "minTech") as! String!)!
-            self.maxTech = TechLevelType(rawValue: decoder.decodeObject(forKey: "maxTech") as! String!)!
+            self.minTech = TechLevelType(rawValue: (decoder.decodeObject(forKey: "minTech") as! String?)!)!
+            self.maxTech = TechLevelType(rawValue: (decoder.decodeObject(forKey: "maxTech") as! String?)!)!
             self.bribeLevel = decoder.decodeInteger(forKey: "bribeLevel")
             self.drugsOk = decoder.decodeBool(forKey: "drugsOk")
             self.firearmsOk = decoder.decodeBool(forKey: "firearmsOk")
-            self.wanted = TradeItemType(rawValue: decoder.decodeObject(forKey: "wanted") as! String!)!
+            self.wanted = TradeItemType(rawValue: (decoder.decodeObject(forKey: "wanted") as! String?)!)!
     
             super.init()
         }

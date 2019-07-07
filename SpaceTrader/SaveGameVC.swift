@@ -28,7 +28,7 @@ class SaveGameVC: UIViewController, UITextFieldDelegate {
 
     // when textField edited, see if chars, if so enable save button
     @IBAction func textFieldWasEdited(_ sender: AnyObject) {
-        if textField.text!.characters.count > 0 {
+        if textField.text!.count > 0 {
             saveButton.isEnabled = true
         } else {
             saveButton.isEnabled = false
@@ -60,8 +60,8 @@ class SaveGameVC: UIViewController, UITextFieldDelegate {
         let title = "Game Saved"
         let message = "Your game has been saved."
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // go back to menu
             self.navigationController?.popToRootViewController(animated: true)

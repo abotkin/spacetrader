@@ -30,7 +30,7 @@ class CustomButton: UIButton {
         //self.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Highlighted)
         
         // gray out option?
-        self.setTitleColor(UIColor.white, for: UIControlState.disabled)
+        self.setTitleColor(UIColor.white, for: UIControl.State.disabled)
         
 
         
@@ -86,8 +86,8 @@ class SpaceTraderButton: UIButton {
         
         // colors
         self.layer.borderColor = mainPurple.cgColor                         // set border color
-        self.setTitleColor(mainPurple, for: UIControlState())     // set normal text color
-        self.setTitleColor(inactiveGray, for: UIControlState.disabled)   // set disabled text color
+        self.setTitleColor(mainPurple, for: UIControl.State())     // set normal text color
+        self.setTitleColor(inactiveGray, for: UIControl.State.disabled)   // set disabled text color
         self.backgroundColor = UIColor.white
         self.tintColor = UIColor.black                               // TODO: set
     }
@@ -119,8 +119,8 @@ class PurpleButtonTurnsGray: SpaceTraderButton {
         
         self.layer.cornerRadius = 5.0;
         self.layer.borderColor = mainPurple.cgColor                         // set border color
-        self.setTitleColor(mainPurple, for: UIControlState())     // set normal text color
-        self.setTitleColor(inactiveGray, for: UIControlState.disabled)   // set disabled text color
+        self.setTitleColor(mainPurple, for: UIControl.State())     // set normal text color
+        self.setTitleColor(inactiveGray, for: UIControl.State.disabled)   // set disabled text color
         self.layer.borderWidth = 1
         self.backgroundColor = UIColor.white
         self.tintColor = UIColor.black
@@ -151,8 +151,8 @@ class PurpleButtonVanishes: SpaceTraderButton {
         
         self.layer.cornerRadius = 5.0;
         self.layer.borderColor = mainPurple.cgColor                         // set border color
-        self.setTitleColor(mainPurple, for: UIControlState())     // set normal text color
-        self.setTitleColor(UIColor.white, for: UIControlState.disabled)   // set disabled text color
+        self.setTitleColor(mainPurple, for: UIControl.State())     // set normal text color
+        self.setTitleColor(UIColor.white, for: UIControl.State.disabled)   // set disabled text color
         self.layer.borderWidth = 1
         self.backgroundColor = UIColor.white
         self.tintColor = UIColor.black
@@ -178,8 +178,8 @@ class GrayButtonTurnsLighter: SpaceTraderButton {
         
         self.layer.cornerRadius = 5.0;
         self.layer.borderColor = textGray.cgColor                         // set border color
-        self.setTitleColor(textGray, for: UIControlState())     // set normal text color
-        self.setTitleColor(inactiveGray, for: UIControlState.disabled)   // set disabled text color
+        self.setTitleColor(textGray, for: UIControl.State())     // set normal text color
+        self.setTitleColor(inactiveGray, for: UIControl.State.disabled)   // set disabled text color
         self.layer.borderWidth = 1
         self.backgroundColor = UIColor.white
         self.tintColor = UIColor.black
@@ -203,8 +203,8 @@ class GrayButtonVanishes: SpaceTraderButton {
         
         self.layer.cornerRadius = 5.0;
         self.layer.borderColor = textGray.cgColor                         // set border color
-        self.setTitleColor(textGray, for: UIControlState())     // set normal text color
-        self.setTitleColor(UIColor.white, for: UIControlState.disabled)   // set disabled text color
+        self.setTitleColor(textGray, for: UIControl.State())     // set normal text color
+        self.setTitleColor(UIColor.white, for: UIControl.State.disabled)   // set disabled text color
         self.layer.borderWidth = 1
         self.backgroundColor = UIColor.white
         self.tintColor = UIColor.black
@@ -245,7 +245,7 @@ class BaysCashBox: SpaceTraderButton {
         
         self.layer.cornerRadius = 0;
         self.layer.borderColor = textGray.cgColor                       // set border color
-        self.setTitleColor(textGray, for: UIControlState.disabled) // set normal text color
+        self.setTitleColor(textGray, for: UIControl.State.disabled) // set normal text color
         self.layer.borderWidth = 1
         self.backgroundColor = UIColor.white
         

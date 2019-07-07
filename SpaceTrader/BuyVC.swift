@@ -79,7 +79,7 @@ class BuyVC: UIViewController, BuyModalVCDelegate {
         
         super.viewDidLoad()
         
-        let controlState = UIControlState()
+        let controlState = UIControl.State()
         buyAsOpposedToSell = true
         
         updateUI()
@@ -303,7 +303,7 @@ class BuyVC: UIViewController, BuyModalVCDelegate {
         // redraw baysCashBox
         baysCashBox.redrawSelf()
         
-        let controlState = UIControlState()
+        let controlState = UIControl.State()
         
         // set quantities
         waterQty.setTitle("\(galaxy.currentSystem!.water)", for: controlState)

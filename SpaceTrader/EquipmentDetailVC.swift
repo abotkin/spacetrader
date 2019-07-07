@@ -43,8 +43,8 @@ class EquipmentDetailVC: UIViewController {
                 let title = "Not Enough Slots"
                 let message = "You have already filled all of your available slots for this type of item."
                 
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                     (alert: UIAlertAction!) -> Void in
                     // do nothing
                     
@@ -61,13 +61,13 @@ class EquipmentDetailVC: UIViewController {
                     let title = "Buy \(chosenItem!.name)"
                     let message = "Do you wish to buy this item for \(buyPriceFormatted) credits?"
                     
-                    let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-                    alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default ,handler: {
+                    let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                    alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default ,handler: {
                         (alert: UIAlertAction!) -> Void in
                         // buy item
                         self.buyItem()
                     }))
-                    alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel ,handler: {
+                    alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel ,handler: {
                         (alert: UIAlertAction!) -> Void in
                         //do nothing
                     }))
@@ -78,8 +78,8 @@ class EquipmentDetailVC: UIViewController {
                     let title = "Not Enough Money"
                     let message = "You do not have enough money to buy this item."
                     
-                    let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-                    alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default ,handler: {
+                    let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                    alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default ,handler: {
                         (alert: UIAlertAction!) -> Void in
                         // do nothing
                         
@@ -92,12 +92,12 @@ class EquipmentDetailVC: UIViewController {
             let title = "Sell Item"
             let message = "Are you sure you want to sell this item?"
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default ,handler: {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 self.sellItem()
             }))
-            alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel ,handler: {
+            alertController.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel ,handler: {
                 (alert: UIAlertAction!) -> Void in
                 // do nothing
             }))
@@ -121,7 +121,7 @@ class EquipmentDetailVC: UIViewController {
         let sellPriceFormatted = numberFormatter.string(from: NSNumber(value: chosenItem!.sellPrice))!
         sellPrice.text = "\(sellPriceFormatted) cr."
         
-        let controlState = UIControlState()
+        let controlState = UIControl.State()
         if buyNotSell! {
             buyButtonLabel.setTitle("Buy", for: controlState)
         } else {

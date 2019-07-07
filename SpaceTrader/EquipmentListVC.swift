@@ -115,7 +115,7 @@ class EquipmentListVC: UIViewController {
             itemSlots.text = "Weapon Slots on Your Ship:"
             itemsAvalable.text = "Weapons Available:"
             
-            let controlState = UIControlState()
+            let controlState = UIControl.State()
             
             item1.setTitle("", for: controlState)
             item2.setTitle("", for: controlState)
@@ -143,7 +143,7 @@ class EquipmentListVC: UIViewController {
             itemSlots.text = "Shield Slots on Your Ship:"
             itemsAvalable.text = "Shields Available:"
             
-            let controlState = UIControlState()
+            let controlState = UIControl.State()
             
             item1.setTitle("", for: controlState)
             item2.setTitle("", for: controlState)
@@ -171,7 +171,7 @@ class EquipmentListVC: UIViewController {
             itemSlots.text = "Gadget Slots on Your Ship:"
             itemsAvalable.text = "Gadgets Available:"
             
-            let controlState = UIControlState()
+            let controlState = UIControl.State()
             
             item1.setTitle("", for: controlState)
             item2.setTitle("", for: controlState)
@@ -231,7 +231,7 @@ class EquipmentListVC: UIViewController {
     
     func populateSlots() {
         // set all titles to empty
-        let controlState = UIControlState()
+        let controlState = UIControl.State()
         slot1.setTitle("Slot 1: <empty>", for: controlState)
         slot2.setTitle("Slot 2: <empty>", for: controlState)
         slot3.setTitle("Slot 3: <empty>", for: controlState)
@@ -273,7 +273,7 @@ class EquipmentListVC: UIViewController {
         
         //
         if selectorIndex == 0 {
-            let controlState = UIControlState()
+            let controlState = UIControl.State()
             
             if player.commanderShip.weapon.count >= 1 {
                 slot1.setTitle("Slot 1: \(player.commanderShip.weapon[0].name)", for: controlState)
@@ -285,7 +285,7 @@ class EquipmentListVC: UIViewController {
                 slot3.setTitle("Slot 3: \(player.commanderShip.weapon[2].name)", for: controlState)
             }
         } else if selectorIndex == 1 {
-            let controlState = UIControlState()
+            let controlState = UIControl.State()
             
             if player.commanderShip.shield.count >= 1 {
                 slot1.setTitle("Slot 1: \(player.commanderShip.shield[0].name)", for: controlState)
@@ -298,7 +298,7 @@ class EquipmentListVC: UIViewController {
             }
             
         } else if selectorIndex == 2 {
-            let controlState = UIControlState()
+            let controlState = UIControl.State()
             
             if player.commanderShip.gadget.count >= 1 {
                 slot1.setTitle("Slot 1: \(player.commanderShip.gadget[0].name)", for: controlState)

@@ -42,7 +42,7 @@ class EquipmentList2VC: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.edgesForExtendedLayout = UIRectEdge()
         
         // send view to background. Not possible to do this in IB
-        self.view.sendSubview(toBack: grayPatchView)
+        self.view.sendSubviewToBack(grayPatchView)
         
     }
     

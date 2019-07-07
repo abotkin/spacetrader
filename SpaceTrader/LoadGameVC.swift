@@ -71,12 +71,12 @@ class LoadGameVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let title = "Load Game?"
         let message = "Your current game will be lost."
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default ,handler: {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default ,handler: {
             (alert: UIAlertAction!) -> Void in
             // do nothing
         }))
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.destructive ,handler: {
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.destructive ,handler: {
             (alert: UIAlertAction!) -> Void in
             self.loadGame(savedGames[(indexPath as NSIndexPath).row])
         }))
@@ -87,7 +87,7 @@ class LoadGameVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             deleteGame((indexPath as NSIndexPath).row)
         }

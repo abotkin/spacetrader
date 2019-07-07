@@ -137,7 +137,7 @@ class BuyModalVC: UIViewController  {       // the one that calls the function i
             textField.text = "You can sell \(quantityAvailableToSell) at up to \(tradeItemSellPrice) cr. each. You paid \(averagePricePaid) cr. per unit. Your \(pOrL) per unit is \(abs(profitLoss)) cr. How many do you want to sell?"
             
             // set text of buy button
-            let controlState = UIControlState()
+            let controlState = UIControl.State()
             buyButtonForLabel.setTitle("Sell", for: controlState)
         }
         
