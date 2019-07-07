@@ -62,6 +62,8 @@ class Galaxy: NSObject, NSCoding {
         // deliberately empty
     }
     
+    // Original code source
+    // - Traveler.c:1339 - "Boolean StartNewGame( void )"
     func createGalaxy() {
         print("Initializing galaxy...")
         planets = []
@@ -307,6 +309,7 @@ class Galaxy: NSObject, NSCoding {
                     case 11:
                         newStarSystem.specialResources = SpecialResourcesType.warlikePopulace
                     default:
+                        // NOTE: No one should be hitting this default case
                         newStarSystem.specialResources = SpecialResourcesType.none
                 }
             } else {
@@ -315,28 +318,29 @@ class Galaxy: NSObject, NSCoding {
             
             // status
             let statusRand1 = Int(arc4random_uniform(100))
-            if statusRand1 >= 85 {
-                newStarSystem.status = StatusType.none
-            } else {
+            if statusRand1 < 15 {
                 let statusRand2 = Int(arc4random_uniform(7))
                 switch statusRand2 {
                 case 0:
                     newStarSystem.status = StatusType.war
-                case 0:
+                case 1:
                     newStarSystem.status = StatusType.plague
-                case 0:
+                case 2:
                     newStarSystem.status = StatusType.drought
-                case 0:
+                case 3:
                     newStarSystem.status = StatusType.boredom
-                case 0:
+                case 4:
                     newStarSystem.status = StatusType.cold
-                case 0:
+                case 5:
                     newStarSystem.status = StatusType.cropFailure
-                case 0:
+                case 6:
                     newStarSystem.status = StatusType.employment
                 default:
+                    // NOTE: No one should be hitting this default case
                     newStarSystem.status = StatusType.none
                 }
+            } else {
+                newStarSystem.status = StatusType.none
             }
 
             
@@ -1125,31 +1129,39 @@ class Galaxy: NSObject, NSCoding {
         
     }
     
+    // *************************************************************************
+    // Status of solar systems may change over time. Used on Arrival to a System
+    // *************************************************************************
+    //
+    // Original source location
+    //   -Traveler.c:715 - "static void ShuffleStatus( void )"
     func shuffleStatus() {
         for planet in planets {
+            let statusRand1 = Int(arc4random_uniform(100))
+            
             if planet.status != StatusType.none {
-                let statusRand1 = Int(arc4random_uniform(100))
                 if statusRand1 < 15 {
                     planet.status = StatusType.none
                 }
-            } else {
+            } else if (statusRand1 < 15) {
                 let statusRand2 = Int(arc4random_uniform(7))
                 switch statusRand2 {
                     case 0:
                         planet.status = StatusType.war
-                    case 0:
+                    case 1:
                         planet.status = StatusType.plague
-                    case 0:
+                    case 2:
                         planet.status = StatusType.drought
-                    case 0:
+                    case 3:
                         planet.status = StatusType.boredom
-                    case 0:
+                    case 4:
                         planet.status = StatusType.cold
-                    case 0:
+                    case 5:
                         planet.status = StatusType.cropFailure
-                    case 0:
+                    case 6:
                         planet.status = StatusType.employment
                     default:
+                        // NOTE: No one should be hitting this default case
                         planet.status = StatusType.none
                 }
             }
